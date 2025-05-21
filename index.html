@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fero</title>
+    <!-- My Own CSS -->
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    >
+  </head>
+  <body>
+    <!-- Isi konten halaman web -->
+    <header class="navbar-container">
+      <div class="nav-overlay"></div>
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <br>
+      <br>
+      <br>
+      <h3>*Note: Klik Kurumi-Chan untuk ke halaman selanjutnya</h3>
+      <nav class="nav-list">
+        <ul>
+          <li><a href="#home" class="active" onclick="showLoading(event)">Home</a></li>
+          <li><a href="#about" onclick="showLoading(event)">About</a></li>
+          <li><a href="#project" onclick="showLoading(event)">Projects</a></li>
+          <li><a href="#sertifikat" onclick="showLoading(event)">Sertifikat</a></li>
+          <li><a href="#kontak" onclick="showLoading(event)">Saran</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Dragable Image -->
+    <section id="container">
+      <a href="#about" onclick="showLoading(event)">
+        <img src="img/kurumi.gif" alt="Fasya">
+      </a>
+    </section>
+    <main>
+      <div class="content">
+        <div class="content-description">
+          <h1 class="title">From pixels to personality — my work is my story.</h1>
+          <p id="typed-text" style="min-height: 10px; white-space: pre-wrap; font-size: 16px; color: #444; margin: 20px auto; max-width: 1000px; text-align: left;"></p>
+          <button>Lebih lanjut</button>
+          <small style="display: block; margin-top: 15px; color: #888; font-style: italic;">
+            “Even the quietest voices have stories worth hearing.”
+          </small>
+        </div>
+        <div class="content-image">
+          <img src="img/aku.jpg" alt="Foto Fasya" style="border-radius: 50%; margin-left: 30px 0; box-shadow: 0 0 10px #ffc2e2;">
+        </div>
+      </div>
+      <section id="terminal-section">
+        <div id="terminal">
+          <div id="terminal-output"></div>
+          <input type="text" id="terminal-input" placeholder="> Type a command..." />
+          <div class="terminal-hint">
+            🛈 Hint: Try typing <code>help</code>, <code>show skills</code>, <code>projects</code>, or <code>about me</code> to learn more~
+          </div>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <!-- About Section -->
+      <section id="about" class="section about">
+        <div class="container">
+          <h1 class="title">
+            <span class="dynamic-text">
+              <span class="word">Feroga</span>
+              <span class="word">Radja</span>
+              <span class="word">Fasyahira</span>
+            </span>
+          </h1>
+          <p class="description">
+            Aku adalah mahasiswa semester 4 yang tertarik banget di dunia teknologi, terutama web development dan AI.
+            Selain ngoding, aku juga suka bikin naratif cerita, explore dunia game development, dan ngelamun soal luar angkasa 🌌.
+            Di luar itu, aku aktif bikin konten seru tentang teknologi dan hiburan, karena aku percaya belajar itu harus fun dan menginspirasi!
+          </p>
+          <small style="display: block; margin-top: 15px; color: #888; font-style: italic;">
+            “Aku ingin menjadi seorang Web Engineer, AI Explorer, Content Creator, Data Analyst, bahkan Game Developer.”
+          </small>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section id="skills">
+        <div class="skills-container">
+          <h3>My Skills & Knowledge</h3>
+          <ul class="skill-list">
+            <li>💻<strong>Frontend Development:</strong> HTML, CSS, JavaScript, Laravel</li>
+            <li>⚙️<strong>Backend Development:</strong> MySQL, Database Management</li>
+            <li>🧠 <strong>Artificial Intelligence:</strong> Studying AI concepts and implementing AI solutions.</li>
+            <li>🎮 <strong>Game Development:</strong> Exploring Unity and crafting narrative-driven game ideas.</li>
+            <li>📖 <strong>Narrative Design:</strong> Passionate about creating storylines, characters, and immersive worlds.</li>
+            <li>🎬 <strong>Content Creation:</strong> Video editing and creating gaming & entertainment content on YouTube</li>
+            <li>🌌 <strong>Astrophile:</strong> Obsessed with Space, Time & the Universe.</li>
+          </ul>
+        </div>
+      </section>
+      <!-- Education Section -->
+      <section id="education">
+        <div class="education-container">
+          <h2>Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>USBYPKP Bandung</h3>
+              <p>Informatics Engineering (2023–2027)</p>
+              <p>Memperdalam pemahaman dasar tentang dunia teknologi </p>
+            </div>
+            <div class="timeline-item">
+              <h3>SMKN 15 Bandung</h3>
+              <p>Social Care Major (2020–2023)</p>
+              <p>Belajar tentang perilaku manusia, komunikasi, dan keterampilan mentoring anak.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>My Projects</h2>
+        <p>Here are some of my best works and projects showcasing my skills in web development, Thumbnail editing, and AI integration.</p>
+        <div class="card-container">
+          <div class="card">
+            <img src="img/project1.jpg" alt="Project 1">
+            <h3>Glamora-Online Store</h3>
+            <p>Ini adalah project akhir yang ku buat di Sanbercode x Bandung AI</p>
+            <a href="https://" target="_blank">aku lupa hosting :b</a>
+          </div>
+          <div class="card">
+            <img src="img/project2.jpg" alt="Project 2">
+            <h3>Cafe Management System</h3>
+            <p>Tugas Akhir Mata Kuliah Analisis dan Desain Perangkat Lunak</p>
+            <a href="tidakdihosting" target="_blank">View Project</a>
+          </div>
+          <div class="card">
+            <img src="img/project3.jpg" alt="Project 3">
+            <h3>Web Promotion</h3>
+            <p>aku membuat web ini untuk mempromosikan sebuah game online (MLBB)</p>
+            <a href="Duh maaf aku gak hosting" target="_blank">View Project</a>
+          </div>
+        </div>
+        <hr class="separator">
+        <h2>Thumbnail Editing</h2>
+        <div class="thumbnail-list">
+          <div class="thumbnail-card">
+            <img src="img/thumbnail1.jpg" alt="Thumbnail 1">
+            <h3>Thumbnail editing example 1.</h3>
+          </div>
+          <div class="thumbnail-card">
+            <img src="img/thumbnail2.jpg" alt="Thumbnail 2">
+            <h3>Thumbnail editing example 2.</h3>
+          </div>
+          <div class="thumbnail-card">
+            <img src="img/thumbnail3.jpg" alt="Thumbnail 3">
+            <h3>Thumbnail editing example 3.</h3>
+          </div>
+        </div>
+      </section>
+      <section id="testimonials">
+        <h3>Karya dan Penghargaan</h3>
+        <p style="color: #fff; text-align: center;">Coming soon</p>
+      </section>
+      <hr class="separator">
+      <section id="software">
+        <h3>Software I Use</h3>
+        <div class="software-list">
+          <div class="">
+            <a href="https:///www.youtube.com" target="_blank">
+              <img src="img/yucub.png" alt="Software 1">
+              <p>Yucub</p>
+            </a>
+          </div>
+          <div class="">
+            <a href="https://www.tiktok.com" target="_blank">
+              <img src="img/tiktok.png" alt="Software 2">
+              <p>Tiktok</p>
+            </a>
+          </div>
+          <div class="">
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="img/ig.png" alt="Software 3">
+              <p>Instagram</p>
+            </a>
+          </div>
+        </div>
+        <h3>For Editing</h3>
+        <div class="software2-list">
+          <div class="">
+            <a href="https://code.visualstudio.com" target="_blank">
+              <img src="img/vscode.png" alt="software 4">
+              <p>VS Code</p>
+            </a>
+          </div>
+          <div class="">
+            <a href="https://www.capcut.com" target="_blank">
+              <img src="img/capcut.png" alt="software 5">
+              <p>Capcut</p>
+            </a>
+          </div>
+          <div class="">
+            <a href="https://picsart.com" target="_blank">
+              <img src="img/picsart.png" alt="software 6">
+              <p>Picsart</p>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="certificates-section">
+        <h2 class="section-title">Sertifikat</h2>
+        <div class="certificates-container">
+          <div class="certificate-card">
+            <h3>🎓 Internship</h3>
+            <p>📝 SanberCode x Bdg AI - Web Development with AI </p>
+            <button class="view-cert-btn" onclick="openModal('inti1')">Lihat sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat -->
+          <div id="inti1" class="modal">
+            <span class="close-btn" onclick="closeModal('inti1')">&times;</span>
+            <img src="img/inti1.jpg" alt="Sertifikat Internship" class="modal-content">
+          </div>
+          <div class="certificate-card">
+            <h3>🎓 Internship</h3>
+            <p>📝 Belum ada hehe :></p>
+            <button class="view-cert-btn" onclick="openModal('inti2')">Lihat sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat -->
+          <div id="inti2" class="modal">
+            <span class="close-btn" onclick="closeModal('inti2')">&times;</span>
+            <img src="img/inti2.jpg" alt="Sertifikat Internship" class="modal-content">
+          </div>
+          <div class="certificate-card">
+            <h3>🎓 Internship</h3>
+            <p>📝 Ku sedang meraih itu :3</p>
+            <button class="view-cert-btn" onclick="openModal('inti3')">Lihat sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat -->
+          <div id="inti3" class="modal">
+            <span class="close-btn" onclick="closeModal('inti3')">&times;</span>
+            <img src="img/inti3.jpg" alt="Sertifikat Internship" class="modal-content">
+          </div>
+          <div class="certificate-card">
+            <h3>🎓 Internship</h3>
+            <p>📝 hmm.</p>
+            <button class="view-cert-btn" onclick="openModal('inti4')">Lihat sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat -->
+          <div id="inti4" class="modal">
+            <span class="close-btn" onclick="closeModal('inti4')">&times;</span>
+            <img src="img/inti4.jpg" alt="Sertifikat Internship" class="modal-content">
+          </div>
+          <!-- Sertifikat belajar -->
+          <div class="certificate-card hidden-certificate">
+            <h3>📚 Learning</h3>
+            <p>✏️ Dicoding Class - Belajar Dasar AI</p>
+            <button class="view-cert-btn" onclick="openModal('learning1')">Lihat Sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat -->
+          <div id="learning1" class="modal">
+            <span class="close-btn" onclick="closeModal('learning1')">&times;</span>
+            <img src="img/learning1.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
+          </div>
+          <div class="certificate-card hidden-certificate">
+            <h3>📚 Learning</h3>
+            <p>✏️ Dicoding Class - Belajar Dasar Data Sciene</p>
+            <button class="view-cert-btn" onclick="openModal('learning2')">Lihat Sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat -->
+          <div id="learning2" class="modal">
+            <span class="close-btn" onclick="closeModal('learning2')">&times;</span>
+            <img src="img/learning2.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
+          </div>
+          <div class="certificate-card hidden-certificate">
+            <h3>📚 Learning</h3>
+            <p>✏️ Oracle - Database Foundations</p>
+            <button class="view-cert-btn" onclick="openModal('learning3')">Lihat Sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat -->
+          <div id="learning3" class="modal">
+            <span class="close-btn" onclick="closeModal('learning3')">&times;</span>
+            <img src="img/learning3.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
+          </div>
+          <div class="certificate-card hidden-certificate">
+            <h3>📚 Learning</h3>
+            <p>✏️ Oracle - Java Foundations</p>
+            <button class="view-cert-btn" onclick="openModal('learning4')">Lihat Sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat -->
+          <div id="learning4" class="modal">
+            <span class="close-btn" onclick="closeModal('learning4')">&times;</span>
+            <img src="img/learning4.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
+          </div>
+          <!-- Sertifikat lainnya bisa mengikuti pola yang sama -->
+          <div class="certificate-card hidden-certificate">
+            <h3>🌟 Event </h3>
+            <p>🍳 Kunjungan Industri - Himatif x PT Agate </p>
+            <button class="view-cert-btn" onclick="openModal('event1')">Lihat Sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat Baru -->
+          <div id="event1" class="modal">
+            <span class="close-btn" onclick="closeModal('event1')">&times;</span>
+            <img src="img/event2.jpg" alt="sygshf" class="modal-content">
+          </div>
+          <div class="certificate-card hidden-certificate">
+            <h3>🌟 Event </h3>
+            <p>🍳 Webinar - Membuat Aplikasi To-do list </p>
+            <button class="view-cert-btn" onclick="openModal('event2')">Lihat Sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat Baru -->
+          <div id="event2" class="modal">
+            <span class="close-btn" onclick="closeModal('event2')">&times;</span>
+            <img src="img/event1.jpg" alt="aku suka" class="modal-content">
+          </div>
+          <div class="certificate-card hidden-certificate">
+            <h3>🌟 Event </h3>
+            <p>🍳 Bootcamp Mini - Belajar PHP Dasar </p>
+            <button class="view-cert-btn" onclick="openModal('event3')">Lihat Sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat Baru -->
+          <div id="event3" class="modal">
+            <span class="close-btn" onclick="closeModal('event3')">&times;</span>
+            <img src="img/event3.jpg" alt="lovyu" class="modal-content">
+          </div>
+          <div class="certificate-card hidden-certificate">
+            <h3>🌟 Event </h3>
+            <p>🍳 ?</p>
+            <button class="view-cert-btn" onclick="openModal('event4')">Lihat Sertif</button>
+          </div>
+          <!-- Modal Gambar Sertifikat Baru -->
+          <div id="event4" class="modal">
+            <span class="close-btn" onclick="closeModal('event4')">&times;</span>
+            <img src="img/event4.jpg" alt="Hihi" class="modal-content">
+          </div>
+        </div>
+        <button class="show-more-btn" id="showMoreCertificates" onclick="showMoreCertificates()">Tampilkan lebih banyak</button>
+      </section>
+      <section id="herokontak">
+        <div class="intro">
+          <h1>Kasih <span>Saran</span></h1>
+          <p>Suka ya? atau engga suka? apapun itu sebelum kamu ingin kontak aku, aku ingin kamu berikan saran, kritik, pujian. Saranmu sangat berarti!</p>
+          <a href="#contact" class="btn">Kirim Saran</a>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section id="contact">
+        <h2>Saran untuk Portofolio</h2>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Nama" required>
+          <textarea name="message" rows="5" placeholder="Saran" required></textarea>
+          <input type="submit" value="Kirim">
+        </form>
+        <div id="suggestions"></div>
+        <div id="whatsappPopup" class="popup" style="display: none;">
+          <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <a id="whatsappLink" href="https://wa.me/628815750989?text=Saran%20apa%20untukku%F0%9F%A5%B0" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px; margin-right: 10px;">
+              <span>Kasih saran di WA aja wkwk, aku gapunya database, Klik!</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <aside>
+        <div class="social-media">
+          <ul>
+            <li><a href="https://youtube.com/@ferokoch"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/ferofasya"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/FeroFasya"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://instagram.com/ferogaaa"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+    <!-- FOOTER JUMBO MODERN -->
+    <footer class="footer-jumbo">
+      <div class="footer-container">
+        <div class="footer-logo"><i class="fas fa-moon"></i> Makasih udah mampir (●'◡'●)</div>
+        <ul class="footer-menu">
+          <li><a href="#">Websise</a></li>
+          <li><a href="#">Aku</a></li>
+          <li><a href="#">Keren</a></li>
+          <li><a href="#">Kan?</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://wa.me/628815750989" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.youtube.com/@Ferokoch" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="mailto:ferofasya@email.com"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fas fa-globe"></i></a>
+        </div>
+        <small style="display: block; text-align: center; margin-top: 15px; color: #888; font-style: italic;">
+          Kalau keren, Order dong :3 <br> bisa isi form kontak aja tuh, otomatis ke WhatsApp ^^
+        </small>
+        <div class="footer-bottom">
+          <div class="footer-lang">
+            <select id="footerLangSelect" aria-label="Pilih Bahasa">
+              <option value="en">English</option>
+              <option value="id">Bahasa Indonesia</option>
+            </select>
+          </div>
+          <div class="footer-copyright">
+            &copy; 2025 Fero ka. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Dragging container
+      const container = document.getElementById('container');
+      let offsetX = 0, offsetY = 0, isDragging = false;
+      // Untuk mouse
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - container.getBoundingClientRect().left;
+        offsetY = e.clientY - container.getBoundingClientRect().top;
+        container.style.cursor = 'grabbing';
+      });
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        container.style.left = `${e.clientX - offsetX}px`;
+        container.style.top = `${e.clientY - offsetY}px`;
+      });
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+        container.style.cursor = 'grab';
+      });
+      // Untuk touchscreen
+      container.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        const touch = e.touches[0];
+        offsetX = touch.clientX - container.getBoundingClientRect().left;
+        offsetY = touch.clientY - container.getBoundingClientRect().top;
+        container.style.cursor = 'grabbing';
+      });
+      document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        container.style.left = `${touch.clientX - offsetX}px`;
+        container.style.top = `${touch.clientY - offsetY}px`;
+      });
+      document.addEventListener('touchend', () => {
+        isDragging = false;
+        container.style.cursor = 'grab';
+      });
+      // ini text yang akan ditampilkan
+      const text = "Hi, I’m Fero. I don’t say much, but I build things that do the talking for me. Whether it’s a line of code, a piece of content, or just a quiet idea—I pour a little bit of myself into it. Welcome to my world.";
+      let i = 0;
+      const speed = 40; // typing speed
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("typed-text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      window.addEventListener("load", typeWriter);
+      // Hamburger menu toggle with drawer and overlay
+      const hamburger = document.querySelector('.hamburger');
+      const navList = document.querySelector('.nav-list');
+      const navOverlay = document.querySelector('.nav-overlay');
+      hamburger.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+      });
+      navOverlay.addEventListener('click', () => {
+        navList.classList.remove('active');
+        navOverlay.classList.remove('active');
+      });
+      // --- Terminal DOM selector ---
+      const terminalInput = document.getElementById('terminal-input');
+      const terminalOutput = document.getElementById('terminal-output');
+      // --- Command mapping with aliases and numbering ---
+      const commandList = [
+        { key: 'help', aliases: ['1', 'Help', 'HELP'], action: () => `Available commands:\n1. help\n2. show skills\n3. about me\n4. projects\n5. contact\n6. clear\n7. exit` },
+        { key: 'show skills', aliases: ['2', 'Show Skills', 'SHOW SKILLS'], action: () => `Skills:\nHTML/CSS: 60%\nVideo Editing: 65%\nBackend Development: 20%` },
+        { key: 'about me', aliases: ['3', 'About Me', 'ABOUT ME'], action: () => { window.location.href = '#about'; return 'Redirecting to About Me...'; } },
+        { key: 'projects', aliases: ['4', 'Projects', 'PROJECTS'], action: () => { window.location.href = '#project'; return 'Opening Projects...'; } },
+        { key: 'contact', aliases: ['5', 'Contact', 'CONTACT'], action: () => { window.location.href = '#kontak'; return 'Redirecting to Contact Info...'; } },
+        { key: 'clear', aliases: ['6', 'Clear', 'CLEAR'], action: () => { terminalOutput.innerText = ''; return ''; } },
+        { key: 'exit', aliases: ['7', 'Exit', 'EXIT'], action: () => 'See you in the real world, coder~' }
+      ];
+      function findCommand(input) {
+        input = input.trim().toLowerCase();
+        for (const cmd of commandList) {
+          if (cmd.key === input) return cmd;
+          if (cmd.aliases.map(function(a){return a.toLowerCase();}).includes(input)) return cmd;
+          // Fuzzy: allow typo on first letter (case-insensitive)
+          if (input.length > 1 && cmd.key.slice(1) === input.slice(1)) return cmd;
+        }
+        return null;
+      }
+      terminalInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          const input = terminalInput.value.trim();
+          terminalInput.value = '';
+          const cmd = findCommand(input);
+          let response;
+          if (cmd) {
+            response = cmd.action();
+          } else {
+            response = `Command not found: ${input}\nType 'help' or '1' to see available commands.`;
+          }
+          if (response) {
+            terminalOutput.innerText += `> ${input}\n${response}\n\n`;
+          }
+        }
+      });
+      // Modal functionality
+      // Fungsi untuk membuka modal
+      function openModal(certId) {
+        var modal = document.getElementById(certId);
+        modal.style.display = "flex"; // Menampilkan modal
+      }
+      // Fungsi untuk menutup modal
+      function closeModal(certId) {
+        var modal = document.getElementById(certId);
+        modal.style.display = "none"; // Menyembunyikan modal
+      }
+      // Menutup modal jika klik di luar gambar
+      window.onclick = function(event) {
+        var modals = document.getElementsByClassName('modal');
+        for (var i = 0; i < modals.length; i++) {
+          if (event.target === modals[i]) {
+            modals[i].style.display = "none";
+          }
+        }
+      }
+      // Sertifikat: Show More Functionality
+      function showMoreCertificates() {
+        var hidden = document.querySelectorAll('.certificate-card.hidden-certificate');
+        hidden.forEach(function(card) {
+          card.classList.remove('hidden-certificate');
+        });
+        var btn = document.getElementById('showMoreCertificates');
+        if (btn) btn.style.display = 'none';
+      }
+      // Form submission
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form dari pengiriman default
+        const name = event.target.name.value; // Ambil nama dari form
+        const message = event.target.message.value;
+        // Buat elemen baru untuk saran
+        const suggestion = document.createElement('div');
+        suggestion.className = 'suggestion';
+        suggestion.innerHTML = `<img src="" alt="" style="border-radius: 50%; margin-right: 10px;"> <strong>👻Anomali👻</strong>: ${message}`;
+        // Tambahkan saran ke dalam div suggestions
+        document.getElementById('suggestions').appendChild(suggestion);
+        // Tampilkan popup WhatsApp
+        const whatsappLink = document.getElementById('whatsappLink');
+        whatsappLink.href = `https://wa.me/628815750989?text=Haii,%20aku%20${encodeURIComponent(name)},%20${encodeURIComponent(message)}`; 
+        document.getElementById('whatsappPopup').style.display = 'flex';
+        // Reset form
+        event.target.reset();
+      });
+      // Menutup popup saat tombol close diklik
+      document.getElementById('closePopup').addEventListener('click', function() {
+        document.getElementById('whatsappPopup').style.display = 'none'; // Menyembunyikan popup saat tombol close diklik
+      });
+      // === Footer Language Switcher ===
+      const footerLangSelect = document.getElementById('footerLangSelect');
+      if (footerLangSelect) {
+        footerLangSelect.addEventListener('change', function() {
+          const lang = this.value;
+          // Footer menu
+          const menu = document.querySelectorAll('.footer-menu li a');
+          const copyright = document.querySelector('.footer-copyright');
+          const logo = document.querySelector('.footer-logo');
+          const small = document.querySelector('.footer-container small');
+          if (lang === 'id') {
+            if(menu.length >= 4) {
+              menu[0].innerText = 'Website';
+              menu[1].innerText = 'Tentang Saya';
+              menu[2].innerText = 'Keren';
+              menu[3].innerText = 'Kan?';
+            }
+            if (copyright) copyright.innerHTML = '&copy; 2025 Fero ka. Hak cipta dilindungi.';
+            if (logo) logo.innerHTML = '<i class="fas fa-moon"></i> Makasih udah mampir (●\'◡\'●)';
+            if (small) small.innerHTML = 'Kalau keren, Order dong :3 <br> bisa isi form kontak aja tuh, otomatis ke WhatsApp ^^';
+          } else {
+            if(menu.length >= 4) {
+              menu[0].innerText = 'Website';
+              menu[1].innerText = 'Me';
+              menu[2].innerText = 'Cool';
+              menu[3].innerText = 'Right?';
+            }
+            if (copyright) copyright.innerHTML = '&copy; 2025 Fero ka. All rights reserved.';
+            if (logo) logo.innerHTML = '<i class="fas fa-moon"></i> Thanks for visiting (●\'◡\'●)';
+            if (small) small.innerHTML = 'If you think it\'s cool, order please :3 <br> just fill the contact form, it will go to WhatsApp ^^';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

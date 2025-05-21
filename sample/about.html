@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>About - Portofolio</title>
+    <link rel="stylesheet" href="css/stylesAbout.css">
+</head>
+
+<body>
+    <header>
+        <button id="menuBtn" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+        <nav id="navbar">
+            <ul id="menuItems">
+                <li><a href="index.html" onclick="showLoading(event)">Home</a></li>
+                <li><a href="about.html" class="active" onclick="showLoading(event)">About</a></li>
+                <li><a href="projects.html" onclick="showLoading(event)">Projects</a></li>
+                <li><a href="certificates.html" onclick="showLoading(event)">Sertifikat</a></li>
+                <li><a href="kontak.html" onclick="showLoading(event)">Saran</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dragable Image -->
+    <section id="container">
+        <a href="projects.html" onclick="showLoading(event)">
+            <img src="img/kurumi.gif" alt="Fasya">
+            <p id="text">look my project?</p>
+        </a>
+    </section>
+
+    <!-- Loading Screen -->
+    <section id="loading-screen">
+        <img src="img/kurumi8.gif" alt="Loading..." />
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <h1>
+                <span class="dynamic-text">
+                    <span class="word">AI Exploler</span>
+                    <span class="word">Web Engineer</span>
+                    <span class="word">Content Creator</span>
+                    <span class="word">Data Analyst</span>
+                    <span class="word">Game Developer</span>
+                </span>
+            </h1>
+            <p>
+                Aku adalah mahasiswa semester 4 yang tertarik banget di dunia teknologi, terutama web development dan AI.
+                Selain ngoding, aku juga suka bikin naratif cerita, explore dunia game development, dan ngelamun soal luar angkasa alias astronomi 🌌.
+                Di luar itu, aku aktif bikin konten seru tentang teknologi dan hiburan, karena aku percaya belajar itu harus fun dan bisa menginspirasi!
+            </p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="btn">
+        <div style="text-align: center">
+            <a href="projects.html" class="btn" onclick="showLoading(event)">See My Work</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h3>My Skills & Knowledge</h3>
+        <ul class="skill-list">
+            <li>🎨 <strong>Frontend Development:</strong> Expertise in HTML, CSS, JavaScript, and Laravel.</li>
+            <li>⚙️ <strong>Backend Development:</strong> Learning MySQL and database management.</li>
+            <li>🧠 <strong>Artificial Intelligence:</strong> Studying AI concepts and implementing AI solutions.</li>
+            <li>🎮 <strong>Game Development:</strong> Exploring Unity and crafting narrative-driven game ideas.</li>
+            <li>📖 <strong>Narrative Design:</strong> Passionate about creating storylines, characters, and immersive worlds.</li>
+            <li>🎬 <strong>Content Creation:</strong> Video editing and creating gaming & entertainment content on YouTube.</li>
+            <li>🌌 <strong>Astrophile:</strong> Obsessed with Space, Time & the Universe.</li>
+        </ul>
+    </section>
+
+    <section id="education" style="padding: 50px; background-color: transparent; font-family: Arial, sans-serif;">
+        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 70px; margin-top: 10px; color: #00bcd4;">Education</h2>
+        <div style="max-width:1000px; margin: 0 auto; position: relative;">
+            <div style="border-left: 2px solid #00bcd4; padding-left: 20px; margin-top: -5px; position: relative;">
+                <div style="margin-bottom: 50px; position: relative;">
+                    <div style="width: 15px; height: 15px; background-color: transparent; border-radius: 50%; position: absolute; left: -28px; top: 1px;"></div>
+                    <h3 style="margin: 0px; font-size: 1.2rem; color: #fff;">Universitas Sangga Buana</h3>
+                    <p style="margin: 5px 0; color: #888;">Bachelor's Degree in Informatics</p>
+                    <p style="margin: 5px 0; color: #888;">2023 - 2027</p>
+                </div>
+                <div style="margin-bottom: 40px; position: relative;">
+                    <div style="width: 15px; height: 15px; background-color: transparent; border-radius: 50%; position: absolute; left: -28px; top: 31px;"></div>
+                    <h3 style="margin: 0; font-size: 1.2rem; color: #fff;">SMKN 15 Bandung</h3>
+                    <p style="margin: 5px 0; color: #888;">Social Care | 2020 - 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-left">&copy; 2025 Kinderfer.</div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@ferdailyyy" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function (event) {
+            const navbar = document.getElementById('navbar');
+            const menuButton = document.getElementById('menuBtn');
+            if (!navbar.contains(event.target) && !menuButton.contains(event.target)) {
+                navbar.classList.remove('active');
+            }
+        });
+
+        const container = document.getElementById('container');
+        let offsetX = 0, offsetY = 0, isDragging = false;
+
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - container.getBoundingClientRect().left;
+            offsetY = e.clientY - container.getBoundingClientRect().top;
+            container.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            container.style.left = `${e.clientX - offsetX}px`;
+            container.style.top = `${e.clientY - offsetY}px`;
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            const touch = e.touches[0];
+            offsetX = touch.clientX - container.getBoundingClientRect().left;
+            offsetY = touch.clientY - container.getBoundingClientRect().top;
+            container.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const touch = e.touches[0];
+            container.style.left = `${touch.clientX - offsetX}px`;
+            container.style.top = `${touch.clientY - offsetY}px`;
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        });
+
+        function showLoading(event) {
+            event.preventDefault();
+            const targetUrl = event.currentTarget.getAttribute('href');
+            document.getElementById('loading-screen').style.display = 'flex';
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>
