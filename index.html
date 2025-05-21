@@ -30,7 +30,7 @@
       <br>
       <br>
       <br>
-      <h3>*Note: Klik Kurumi-Chan untuk ke halaman selanjutnya</h3>
+      <h3>*Note: Klik Kurumi-Chan untuk membuka bagian selanjutnya</h3>
       <nav class="nav-list">
         <ul>
           <li><a href="#home" class="active" onclick="showLoading(event)">Home</a></li>
@@ -43,330 +43,350 @@
     </header>
     <!-- Dragable Image -->
     <section id="container">
-      <a href="#about" onclick="showLoading(event)">
+      <a href="#about" id="draggableTrigger" onclick="event.preventDefault(); unlockNextSection();">
         <img src="img/kurumi.gif" alt="Fasya">
       </a>
     </section>
     <main>
-      <div class="content">
-        <div class="content-description">
-          <h1 class="title">From pixels to personality — my work is my story.</h1>
-          <p id="typed-text" style="min-height: 10px; white-space: pre-wrap; font-size: 16px; color: #444; margin: 20px auto; max-width: 1000px; text-align: left;"></p>
-          <button>Lebih lanjut</button>
-          <small style="display: block; margin-top: 15px; color: #888; font-style: italic;">
-            “Even the quietest voices have stories worth hearing.”
-          </small>
-        </div>
-        <div class="content-image">
-          <img src="img/aku.jpg" alt="Foto Fasya" style="border-radius: 50%; margin-left: 30px 0; box-shadow: 0 0 10px #ffc2e2;">
-        </div>
-      </div>
-      <section id="terminal-section">
-        <div id="terminal">
-          <div id="terminal-output"></div>
-          <input type="text" id="terminal-input" placeholder="> Type a command..." />
-          <div class="terminal-hint">
-            🛈 Hint: Try typing <code>help</code>, <code>show skills</code>, <code>projects</code>, or <code>about me</code> to learn more~
+      <section id="s-home">
+        <div class="content">
+          <div class="content-description">
+            <h1 class="title">From pixels to personality — my work is my story.</h1>
+            <p id="typed-text" style="min-height: 10px; white-space: pre-wrap; font-size: 16px; color: #444; margin: 20px auto; max-width: 1000px; text-align: left;"></p>
+            <button>Lebih lanjut</button>
+            <small style="display: block; margin-top: 15px; color: #888; font-style: italic;">
+              “Even the quietest voices have stories worth hearing.”
+            </small>
+          </div>
+          <div class="content-image">
+            <img src="img/aku.jpg" alt="Foto Fasya" style="border-radius: 50%; margin-left: 30px 0; box-shadow: 0 0 10px #ffc2e2;">
           </div>
         </div>
+        <section id="terminal-section">
+          <div id="terminal">
+            <div id="terminal-output"></div>
+            <input type="text" id="terminal-input" placeholder="> Type a command..." />
+            <div class="terminal-hint">
+              🛈 Hint: Try typing <code>help</code>, <code>show skills</code>, <code>projects</code>, or <code>about me</code> to learn more~
+            </div>
+          </div>
+        </section>
       </section>
       <div class="divider"></div>
+
       <!-- About Section -->
-      <section id="about" class="section about">
-        <div class="container">
-          <h1 class="title">
-            <span class="dynamic-text">
-              <span class="word">Feroga</span>
-              <span class="word">Radja</span>
-              <span class="word">Fasyahira</span>
-            </span>
-          </h1>
-          <p class="description">
-            Aku adalah mahasiswa semester 4 yang tertarik banget di dunia teknologi, terutama web development dan AI.
-            Selain ngoding, aku juga suka bikin naratif cerita, explore dunia game development, dan ngelamun soal luar angkasa 🌌.
-            Di luar itu, aku aktif bikin konten seru tentang teknologi dan hiburan, karena aku percaya belajar itu harus fun dan menginspirasi!
-          </p>
-          <small style="display: block; margin-top: 15px; color: #888; font-style: italic;">
-            “Aku ingin menjadi seorang Web Engineer, AI Explorer, Content Creator, Data Analyst, bahkan Game Developer.”
-          </small>
-        </div>
-      </section>
-      <!-- Skills Section -->
-      <section id="skills">
-        <div class="skills-container">
-          <h3>My Skills & Knowledge</h3>
-          <ul class="skill-list">
-            <li>💻<strong>Frontend Development:</strong> HTML, CSS, JavaScript, Laravel</li>
-            <li>⚙️<strong>Backend Development:</strong> MySQL, Database Management</li>
-            <li>🧠 <strong>Artificial Intelligence:</strong> Studying AI concepts and implementing AI solutions.</li>
-            <li>🎮 <strong>Game Development:</strong> Exploring Unity and crafting narrative-driven game ideas.</li>
-            <li>📖 <strong>Narrative Design:</strong> Passionate about creating storylines, characters, and immersive worlds.</li>
-            <li>🎬 <strong>Content Creation:</strong> Video editing and creating gaming & entertainment content on YouTube</li>
-            <li>🌌 <strong>Astrophile:</strong> Obsessed with Space, Time & the Universe.</li>
-          </ul>
-        </div>
-      </section>
-      <!-- Education Section -->
-      <section id="education">
-        <div class="education-container">
-          <h2>Education</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h3>USBYPKP Bandung</h3>
-              <p>Informatics Engineering (2023–2027)</p>
-              <p>Memperdalam pemahaman dasar tentang dunia teknologi </p>
+      <section id="s-about">
+        <section id="about" class="section about">
+          <div class="container">
+            <h1 class="title">
+              <span class="dynamic-text">
+                <span class="word">Feroga</span>
+                <span class="word">Radja</span>
+                <span class="word">Fasyahira</span>
+              </span>
+            </h1>
+            <p class="description">
+              Aku adalah mahasiswa semester 4 yang tertarik banget di dunia teknologi, terutama web development dan AI.
+              Selain ngoding, aku juga suka bikin naratif cerita, explore dunia game development, dan ngelamun soal luar angkasa 🌌.
+              Di luar itu, aku aktif bikin konten seru tentang teknologi dan hiburan, karena aku percaya belajar itu harus fun dan menginspirasi!
+            </p>
+            <small style="display: block; margin-top: 15px; color: #888; font-style: italic;">
+              “Aku ingin menjadi seorang Web Engineer, AI Explorer, Content Creator, Data Analyst, bahkan Game Developer.”
+            </small>
+          </div>
+        </section>
+        <!-- Skills Section -->
+        <section id="skills">
+          <div class="skills-container">
+            <h3>My Skills & Knowledge</h3>
+            <ul class="skill-list">
+              <li>💻<strong>Frontend Development:</strong> HTML, CSS, JavaScript, Laravel</li>
+              <li>⚙️<strong>Backend Development:</strong> MySQL, Database Management</li>
+              <li>🧠 <strong>Artificial Intelligence:</strong> Studying AI concepts and implementing AI solutions.</li>
+              <li>🎮 <strong>Game Development:</strong> Exploring Unity and crafting narrative-driven game ideas.</li>
+              <li>📖 <strong>Narrative Design:</strong> Passionate about creating storylines, characters, and immersive worlds.</li>
+              <li>🎬 <strong>Content Creation:</strong> Video editing and creating gaming & entertainment content on YouTube</li>
+              <li>🌌 <strong>Astrophile:</strong> Obsessed with Space, Time & the Universe.</li>
+            </ul>
+          </div>
+        </section>
+      
+        <!-- Education Section -->
+        <section id="education">
+          <div class="education-container">
+            <h2>Education</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h3>USBYPKP Bandung</h3>
+                <p>Informatics Engineering (2023–2027)</p>
+                <p>Memperdalam pemahaman dasar tentang dunia teknologi </p>
+              </div>
+              <div class="timeline-item">
+                <h3>SMKN 15 Bandung</h3>
+                <p>Social Care Major (2020–2023)</p>
+                <p>Belajar tentang perilaku manusia, komunikasi, dan keterampilan mentoring anak.</p>
+              </div>
             </div>
-            <div class="timeline-item">
-              <h3>SMKN 15 Bandung</h3>
-              <p>Social Care Major (2020–2023)</p>
-              <p>Belajar tentang perilaku manusia, komunikasi, dan keterampilan mentoring anak.</p>
-            </div>
           </div>
-        </div>
-      </section>
-      <section id="projects">
-        <h2>My Projects</h2>
-        <p>Here are some of my best works and projects showcasing my skills in web development, Thumbnail editing, and AI integration.</p>
-        <div class="card-container">
-          <div class="card">
-            <img src="img/project1.jpg" alt="Project 1">
-            <h3>Glamora-Online Store</h3>
-            <p>Ini adalah project akhir yang ku buat di Sanbercode x Bandung AI</p>
-            <a href="https://" target="_blank">aku lupa hosting :b</a>
-          </div>
-          <div class="card">
-            <img src="img/project2.jpg" alt="Project 2">
-            <h3>Cafe Management System</h3>
-            <p>Tugas Akhir Mata Kuliah Analisis dan Desain Perangkat Lunak</p>
-            <a href="tidakdihosting" target="_blank">View Project</a>
-          </div>
-          <div class="card">
-            <img src="img/project3.jpg" alt="Project 3">
-            <h3>Web Promotion</h3>
-            <p>aku membuat web ini untuk mempromosikan sebuah game online (MLBB)</p>
-            <a href="Duh maaf aku gak hosting" target="_blank">View Project</a>
-          </div>
-        </div>
-        <hr class="separator">
-        <h2>Thumbnail Editing</h2>
-        <div class="thumbnail-list">
-          <div class="thumbnail-card">
-            <img src="img/thumbnail1.jpg" alt="Thumbnail 1">
-            <h3>Thumbnail editing example 1.</h3>
-          </div>
-          <div class="thumbnail-card">
-            <img src="img/thumbnail2.jpg" alt="Thumbnail 2">
-            <h3>Thumbnail editing example 2.</h3>
-          </div>
-          <div class="thumbnail-card">
-            <img src="img/thumbnail3.jpg" alt="Thumbnail 3">
-            <h3>Thumbnail editing example 3.</h3>
-          </div>
-        </div>
-      </section>
-      <section id="testimonials">
-        <h3>Karya dan Penghargaan</h3>
-        <p style="color: #fff; text-align: center;">Coming soon</p>
-      </section>
-      <hr class="separator">
-      <section id="software">
-        <h3>Software I Use</h3>
-        <div class="software-list">
-          <div class="">
-            <a href="https:///www.youtube.com" target="_blank">
-              <img src="img/yucub.png" alt="Software 1">
-              <p>Yucub</p>
-            </a>
-          </div>
-          <div class="">
-            <a href="https://www.tiktok.com" target="_blank">
-              <img src="img/tiktok.png" alt="Software 2">
-              <p>Tiktok</p>
-            </a>
-          </div>
-          <div class="">
-            <a href="https://www.instagram.com" target="_blank">
-              <img src="img/ig.png" alt="Software 3">
-              <p>Instagram</p>
-            </a>
-          </div>
-        </div>
-        <h3>For Editing</h3>
-        <div class="software2-list">
-          <div class="">
-            <a href="https://code.visualstudio.com" target="_blank">
-              <img src="img/vscode.png" alt="software 4">
-              <p>VS Code</p>
-            </a>
-          </div>
-          <div class="">
-            <a href="https://www.capcut.com" target="_blank">
-              <img src="img/capcut.png" alt="software 5">
-              <p>Capcut</p>
-            </a>
-          </div>
-          <div class="">
-            <a href="https://picsart.com" target="_blank">
-              <img src="img/picsart.png" alt="software 6">
-              <p>Picsart</p>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section class="certificates-section">
-        <h2 class="section-title">Sertifikat</h2>
-        <div class="certificates-container">
-          <div class="certificate-card">
-            <h3>🎓 Internship</h3>
-            <p>📝 SanberCode x Bdg AI - Web Development with AI </p>
-            <button class="view-cert-btn" onclick="openModal('inti1')">Lihat sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat -->
-          <div id="inti1" class="modal">
-            <span class="close-btn" onclick="closeModal('inti1')">&times;</span>
-            <img src="img/inti1.jpg" alt="Sertifikat Internship" class="modal-content">
-          </div>
-          <div class="certificate-card">
-            <h3>🎓 Internship</h3>
-            <p>📝 Belum ada hehe :></p>
-            <button class="view-cert-btn" onclick="openModal('inti2')">Lihat sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat -->
-          <div id="inti2" class="modal">
-            <span class="close-btn" onclick="closeModal('inti2')">&times;</span>
-            <img src="img/inti2.jpg" alt="Sertifikat Internship" class="modal-content">
-          </div>
-          <div class="certificate-card">
-            <h3>🎓 Internship</h3>
-            <p>📝 Ku sedang meraih itu :3</p>
-            <button class="view-cert-btn" onclick="openModal('inti3')">Lihat sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat -->
-          <div id="inti3" class="modal">
-            <span class="close-btn" onclick="closeModal('inti3')">&times;</span>
-            <img src="img/inti3.jpg" alt="Sertifikat Internship" class="modal-content">
-          </div>
-          <div class="certificate-card">
-            <h3>🎓 Internship</h3>
-            <p>📝 hmm.</p>
-            <button class="view-cert-btn" onclick="openModal('inti4')">Lihat sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat -->
-          <div id="inti4" class="modal">
-            <span class="close-btn" onclick="closeModal('inti4')">&times;</span>
-            <img src="img/inti4.jpg" alt="Sertifikat Internship" class="modal-content">
-          </div>
-          <!-- Sertifikat belajar -->
-          <div class="certificate-card hidden-certificate">
-            <h3>📚 Learning</h3>
-            <p>✏️ Dicoding Class - Belajar Dasar AI</p>
-            <button class="view-cert-btn" onclick="openModal('learning1')">Lihat Sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat -->
-          <div id="learning1" class="modal">
-            <span class="close-btn" onclick="closeModal('learning1')">&times;</span>
-            <img src="img/learning1.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
-          </div>
-          <div class="certificate-card hidden-certificate">
-            <h3>📚 Learning</h3>
-            <p>✏️ Dicoding Class - Belajar Dasar Data Sciene</p>
-            <button class="view-cert-btn" onclick="openModal('learning2')">Lihat Sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat -->
-          <div id="learning2" class="modal">
-            <span class="close-btn" onclick="closeModal('learning2')">&times;</span>
-            <img src="img/learning2.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
-          </div>
-          <div class="certificate-card hidden-certificate">
-            <h3>📚 Learning</h3>
-            <p>✏️ Oracle - Database Foundations</p>
-            <button class="view-cert-btn" onclick="openModal('learning3')">Lihat Sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat -->
-          <div id="learning3" class="modal">
-            <span class="close-btn" onclick="closeModal('learning3')">&times;</span>
-            <img src="img/learning3.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
-          </div>
-          <div class="certificate-card hidden-certificate">
-            <h3>📚 Learning</h3>
-            <p>✏️ Oracle - Java Foundations</p>
-            <button class="view-cert-btn" onclick="openModal('learning4')">Lihat Sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat -->
-          <div id="learning4" class="modal">
-            <span class="close-btn" onclick="closeModal('learning4')">&times;</span>
-            <img src="img/learning4.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
-          </div>
-          <!-- Sertifikat lainnya bisa mengikuti pola yang sama -->
-          <div class="certificate-card hidden-certificate">
-            <h3>🌟 Event </h3>
-            <p>🍳 Kunjungan Industri - Himatif x PT Agate </p>
-            <button class="view-cert-btn" onclick="openModal('event1')">Lihat Sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat Baru -->
-          <div id="event1" class="modal">
-            <span class="close-btn" onclick="closeModal('event1')">&times;</span>
-            <img src="img/event2.jpg" alt="sygshf" class="modal-content">
-          </div>
-          <div class="certificate-card hidden-certificate">
-            <h3>🌟 Event </h3>
-            <p>🍳 Webinar - Membuat Aplikasi To-do list </p>
-            <button class="view-cert-btn" onclick="openModal('event2')">Lihat Sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat Baru -->
-          <div id="event2" class="modal">
-            <span class="close-btn" onclick="closeModal('event2')">&times;</span>
-            <img src="img/event1.jpg" alt="aku suka" class="modal-content">
-          </div>
-          <div class="certificate-card hidden-certificate">
-            <h3>🌟 Event </h3>
-            <p>🍳 Bootcamp Mini - Belajar PHP Dasar </p>
-            <button class="view-cert-btn" onclick="openModal('event3')">Lihat Sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat Baru -->
-          <div id="event3" class="modal">
-            <span class="close-btn" onclick="closeModal('event3')">&times;</span>
-            <img src="img/event3.jpg" alt="lovyu" class="modal-content">
-          </div>
-          <div class="certificate-card hidden-certificate">
-            <h3>🌟 Event </h3>
-            <p>🍳 ?</p>
-            <button class="view-cert-btn" onclick="openModal('event4')">Lihat Sertif</button>
-          </div>
-          <!-- Modal Gambar Sertifikat Baru -->
-          <div id="event4" class="modal">
-            <span class="close-btn" onclick="closeModal('event4')">&times;</span>
-            <img src="img/event4.jpg" alt="Hihi" class="modal-content">
-          </div>
-        </div>
-        <button class="show-more-btn" id="showMoreCertificates" onclick="showMoreCertificates()">Tampilkan lebih banyak</button>
-      </section>
-      <section id="herokontak">
-        <div class="intro">
-          <h1>Kasih <span>Saran</span></h1>
-          <p>Suka ya? atau engga suka? apapun itu sebelum kamu ingin kontak aku, aku ingin kamu berikan saran, kritik, pujian. Saranmu sangat berarti!</p>
-          <a href="#contact" class="btn">Kirim Saran</a>
-        </div>
+        </section>
       </section>
       <div class="divider"></div>
-      <section id="contact">
-        <h2>Saran untuk Portofolio</h2>
-        <form id="contactForm">
-          <input type="text" name="name" placeholder="Nama" required>
-          <textarea name="message" rows="5" placeholder="Saran" required></textarea>
-          <input type="submit" value="Kirim">
-        </form>
-        <div id="suggestions"></div>
-        <div id="whatsappPopup" class="popup" style="display: none;">
-          <div class="popup-content">
-            <span class="close" id="closePopup">&times;</span>
-            <a id="whatsappLink" href="https://wa.me/628815750989?text=Saran%20apa%20untukku%F0%9F%A5%B0" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px; margin-right: 10px;">
-              <span>Kasih saran di WA aja wkwk, aku gapunya database, Klik!</span>
-            </a>
+      <!-- Projects Section -->
+      <section id="s-projects">
+        <section id="projects">
+          <h2>My Projects</h2>
+          <p>Here are some of my best works and projects showcasing my skills in web development, Thumbnail editing, and AI integration.</p>
+          <div class="card-container">
+            <div class="card">
+              <img src="img/project1.jpg" alt="Project 1">
+              <h3>Glamora-Online Store</h3>
+              <p>Ini adalah project akhir yang ku buat di Sanbercode x Bandung AI</p>
+              <a href="https://" target="_blank">aku lupa hosting :b</a>
+            </div>
+            <div class="card">
+              <img src="img/project2.jpg" alt="Project 2">
+              <h3>Cafe Management System</h3>
+              <p>Tugas Akhir Mata Kuliah Analisis dan Desain Perangkat Lunak</p>
+              <a href="tidakdihosting" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+              <img src="img/project3.jpg" alt="Project 3">
+              <h3>Web Promotion</h3>
+              <p>aku membuat web ini untuk mempromosikan sebuah game online (MLBB)</p>
+              <a href="Duh maaf aku gak hosting" target="_blank">View Project</a>
+            </div>
           </div>
-        </div>
+          <hr class="separator">
+          <h2>Thumbnail Editing</h2>
+          <div class="thumbnail-list">
+            <div class="thumbnail-card">
+              <img src="img/thumbnail1.jpg" alt="Thumbnail 1">
+              <h3>Thumbnail editing example 1.</h3>
+            </div>
+            <div class="thumbnail-card">
+              <img src="img/thumbnail2.jpg" alt="Thumbnail 2">
+              <h3>Thumbnail editing example 2.</h3>
+            </div>
+            <div class="thumbnail-card">
+              <img src="img/thumbnail3.jpg" alt="Thumbnail 3">
+              <h3>Thumbnail editing example 3.</h3>
+            </div>
+          </div>
+        </section>
+        <section id="testimonials">
+          <h3>Karya dan Penghargaan</h3>
+          <p style="color: #fff; text-align: center;">Coming soon</p>
+        </section>
+        <hr class="separator">
+        <section id="software">
+          <h3>Software I Use</h3>
+          <div class="software-list">
+            <div class="">
+              <a href="https:///www.youtube.com" target="_blank">
+                <img src="img/yucub.png" alt="Software 1">
+                <p>Yucub</p>
+              </a>
+            </div>
+            <div class="">
+              <a href="https://www.tiktok.com" target="_blank">
+                <img src="img/tiktok.png" alt="Software 2">
+                <p>Tiktok</p>
+              </a>
+            </div>
+            <div class="">
+              <a href="https://www.instagram.com" target="_blank">
+                <img src="img/ig.png" alt="Software 3">
+                <p>Instagram</p>
+              </a>
+            </div>
+          </div>
+          <h3>For Editing</h3>
+          <div class="software2-list">
+            <div class="">
+              <a href="https://code.visualstudio.com" target="_blank">
+                <img src="img/vscode.png" alt="software 4">
+                <p>VS Code</p>
+              </a>
+            </div>
+            <div class="">
+              <a href="https://www.capcut.com" target="_blank">
+                <img src="img/capcut.png" alt="software 5">
+                <p>Capcut</p>
+              </a>
+            </div>
+            <div class="">
+              <a href="https://picsart.com" target="_blank">
+                <img src="img/picsart.png" alt="software 6">
+                <p>Picsart</p>
+              </a>
+            </div>
+          </div>
+        </section>
       </section>
+      <div class="divider"></div>
+      <!-- Sertifikat Section -->
+      <section id="s-sertifikat">
+        <section class="certificates-section">
+          <h2 class="section-title">Sertifikat</h2>
+          <div class="certificates-container">
+            <div class="certificate-card">
+              <h3>🎓 Internship</h3>
+              <p>📝 SanberCode x Bdg AI - Web Development with AI </p>
+              <button class="view-cert-btn" onclick="openModal('inti1')">Lihat sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat -->
+            <div id="inti1" class="modal">
+              <span class="close-btn" onclick="closeModal('inti1')">&times;</span>
+              <img src="img/inti1.jpg" alt="Sertifikat Internship" class="modal-content">
+            </div>
+            <div class="certificate-card">
+              <h3>🎓 Internship</h3>
+              <p>📝 Belum ada hehe :></p>
+              <button class="view-cert-btn" onclick="openModal('inti2')">Lihat sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat -->
+            <div id="inti2" class="modal">
+              <span class="close-btn" onclick="closeModal('inti2')">&times;</span>
+              <img src="img/inti2.jpg" alt="Sertifikat Internship" class="modal-content">
+            </div>
+            <div class="certificate-card">
+              <h3>🎓 Internship</h3>
+              <p>📝 Ku sedang meraih itu :3</p>
+              <button class="view-cert-btn" onclick="openModal('inti3')">Lihat sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat -->
+            <div id="inti3" class="modal">
+              <span class="close-btn" onclick="closeModal('inti3')">&times;</span>
+              <img src="img/inti3.jpg" alt="Sertifikat Internship" class="modal-content">
+            </div>
+            <div class="certificate-card">
+              <h3>🎓 Internship</h3>
+              <p>📝 hmm.</p>
+              <button class="view-cert-btn" onclick="openModal('inti4')">Lihat sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat -->
+            <div id="inti4" class="modal">
+              <span class="close-btn" onclick="closeModal('inti4')">&times;</span>
+              <img src="img/inti4.jpg" alt="Sertifikat Internship" class="modal-content">
+            </div>
+            <!-- Sertifikat belajar -->
+            <div class="certificate-card hidden-certificate">
+              <h3>📚 Learning</h3>
+              <p>✏️ Dicoding Class - Belajar Dasar AI</p>
+              <button class="view-cert-btn" onclick="openModal('learning1')">Lihat Sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat -->
+            <div id="learning1" class="modal">
+              <span class="close-btn" onclick="closeModal('learning1')">&times;</span>
+              <img src="img/learning1.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
+            </div>
+            <div class="certificate-card hidden-certificate">
+              <h3>📚 Learning</h3>
+              <p>✏️ Dicoding Class - Belajar Dasar Data Sciene</p>
+              <button class="view-cert-btn" onclick="openModal('learning2')">Lihat Sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat -->
+            <div id="learning2" class="modal">
+              <span class="close-btn" onclick="closeModal('learning2')">&times;</span>
+              <img src="img/learning2.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
+            </div>
+            <div class="certificate-card hidden-certificate">
+              <h3>📚 Learning</h3>
+              <p>✏️ Oracle - Database Foundations</p>
+              <button class="view-cert-btn" onclick="openModal('learning3')">Lihat Sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat -->
+            <div id="learning3" class="modal">
+              <span class="close-btn" onclick="closeModal('learning3')">&times;</span>
+              <img src="img/learning3.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
+            </div>
+            <div class="certificate-card hidden-certificate">
+              <h3>📚 Learning</h3>
+              <p>✏️ Oracle - Java Foundations</p>
+              <button class="view-cert-btn" onclick="openModal('learning4')">Lihat Sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat -->
+            <div id="learning4" class="modal">
+              <span class="close-btn" onclick="closeModal('learning4')">&times;</span>
+              <img src="img/learning4.jpg" alt="Sertifikat Dicoding AI" class="modal-content">
+            </div>
+            <!-- Sertifikat lainnya bisa mengikuti pola yang sama -->
+            <div class="certificate-card hidden-certificate">
+              <h3>🌟 Event </h3>
+              <p>🍳 Kunjungan Industri - Himatif x PT Agate </p>
+              <button class="view-cert-btn" onclick="openModal('event1')">Lihat Sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat Baru -->
+            <div id="event1" class="modal">
+              <span class="close-btn" onclick="closeModal('event1')">&times;</span>
+              <img src="img/event2.jpg" alt="sygshf" class="modal-content">
+            </div>
+            <div class="certificate-card hidden-certificate">
+              <h3>🌟 Event </h3>
+              <p>🍳 Webinar - Membuat Aplikasi To-do list </p>
+              <button class="view-cert-btn" onclick="openModal('event2')">Lihat Sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat Baru -->
+            <div id="event2" class="modal">
+              <span class="close-btn" onclick="closeModal('event2')">&times;</span>
+              <img src="img/event1.jpg" alt="aku suka" class="modal-content">
+            </div>
+            <div class="certificate-card hidden-certificate">
+              <h3>🌟 Event </h3>
+              <p>🍳 Bootcamp Mini - Belajar PHP Dasar </p>
+              <button class="view-cert-btn" onclick="openModal('event3')">Lihat Sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat Baru -->
+            <div id="event3" class="modal">
+              <span class="close-btn" onclick="closeModal('event3')">&times;</span>
+              <img src="img/event3.jpg" alt="lovyu" class="modal-content">
+            </div>
+            <div class="certificate-card hidden-certificate">
+              <h3>🌟 Event </h3>
+              <p>🍳 ?</p>
+              <button class="view-cert-btn" onclick="openModal('event4')">Lihat Sertif</button>
+            </div>
+            <!-- Modal Gambar Sertifikat Baru -->
+            <div id="event4" class="modal">
+              <span class="close-btn" onclick="closeModal('event4')">&times;</span>
+              <img src="img/event4.jpg" alt="Hihi" class="modal-content">
+            </div>
+          </div>
+          <button class="show-more-btn" id="showMoreCertificates" onclick="showMoreCertificates()">Tampilkan lebih banyak</button>
+        </section>
+      </section>
+      <div class="divider"></div>
+      <!-- Contact Section -->
+      <section id="s-kontak">
+        <section id="herokontak">
+          <div class="intro">
+            <h1>Kasih <span>Saran</span></h1>
+            <p>Suka ya? atau engga suka? apapun itu sebelum kamu ingin kontak aku, aku ingin kamu berikan saran, kritik, pujian. Saranmu sangat berarti!</p>
+            <a href="#contact" class="btn">Kirim Saran</a>
+          </div>
+        </section>
+        <div class="divider"></div>
+        <section id="contact">
+          <h2>Saran untuk Portofolio</h2>
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="Nama" required>
+            <textarea name="message" rows="5" placeholder="Saran" required></textarea>
+            <input type="submit" value="Kirim">
+          </form>
+          <div id="suggestions"></div>
+          <div id="whatsappPopup" class="popup" style="display: none;">
+            <div class="popup-content">
+              <span class="close" id="closePopup">&times;</span>
+              <a id="whatsappLink" href="https://wa.me/628815750989?text=Saran%20apa%20untukku%F0%9F%A5%B0" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px; margin-right: 10px;">
+                <span>Kasih saran di WA aja wkwk, aku gapunya database, Klik!</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </section> 
+      <div class="divider"></div>
+      <!-- Social Media Section -->
       <aside>
         <div class="social-media">
           <ul>
@@ -595,6 +615,190 @@
           }
         });
       }
+      // === Section Lock/Unlock Logic ===
+      const sectionOrder = ["s-home", "s-about", "s-projects", "s-sertifikat", "s-kontak"];
+      let currentSectionIndex = 0;
+
+      function lockSections() {
+        sectionOrder.forEach((id, idx) => {
+          const section = document.getElementById(id);
+          if (section) {
+            // Pastikan section utama relative agar overlay absolute selalu benar
+            section.style.position = 'relative';
+            // Pastikan min-height agar observer selalu bisa trigger
+            section.style.minHeight = '60vh';
+            // Cari/masukkan wrapper locked-content
+            let content = section.querySelector('.locked-content');
+            if (!content) {
+              content = document.createElement('div');
+              content.className = 'locked-content';
+              while (section.firstChild) {
+                content.appendChild(section.firstChild);
+              }
+              section.appendChild(content);
+            }
+            removeSectionLockOverlay(section);
+            if (idx === 0) {
+              content.classList.remove("locked-section");
+            } else {
+              content.classList.add("locked-section");
+            }
+          }
+        });
+      }
+
+      function unlockNextSection() {
+        if (currentSectionIndex < sectionOrder.length - 1) {
+          currentSectionIndex++;
+          const section = document.getElementById(sectionOrder[currentSectionIndex]);
+          if (section) {
+            const content = section.querySelector('.locked-content');
+            if (content) content.classList.remove("locked-section");
+            removeSectionLockOverlay(section, true); // true = animasi unlock
+          }
+        }
+      }
+
+      function addSectionLockOverlay(section) {
+        if (!section || section.querySelector('.lock-overlay-section')) return;
+        const overlay = document.createElement('div');
+        overlay.className = 'lock-overlay-section';
+        overlay.innerHTML = `
+          <div class="lock-message-global">
+            <img class="anime-lock" src="img/kurumi.gif" alt="Ngambek" style="width:90px;height:90px;margin-bottom:10px;filter:drop-shadow(0 2px 8px #0002);">
+            <img src="https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/icons/lock.svg" alt="Locked" style="width:60px;height:60px;opacity:0.85;margin-bottom:18px;filter:drop-shadow(0 2px 8px #0002);">
+            <div style="font-size:2rem;font-weight:600;margin-bottom:8px;">Halaman ini terkunci.</div>
+            <div style="font-size:1rem;opacity:0.8;">Klik gambar Menhera-chan untuk membuka.</div>
+          </div>
+        `;
+        overlay.style.position = 'absolute';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.background = 'rgba(30,30,50,0.85)';
+        overlay.style.display = 'flex';
+        overlay.style.flexDirection = 'column';
+        overlay.style.justifyContent = 'center';
+        overlay.style.alignItems = 'center';
+        overlay.style.zIndex = 99;
+        overlay.style.backdropFilter = 'blur(2px)';
+        overlay.style.pointerEvents = 'auto';
+        overlay.style.transition = 'opacity 0.3s';
+        section.appendChild(overlay);
+      }
+
+      function removeSectionLockOverlay(section, unlockAnim) {
+        if (!section) return;
+        const overlay = section.querySelector('.lock-overlay-section');
+        if (overlay) {
+          if (unlockAnim) {
+            // Ganti isi overlay dengan animasi unlock (senang/sparkle)
+            overlay.innerHTML = `
+              <div class=\"lock-message-global\">
+                <img class=\"anime-unlock\" src=\"img/kurumi8.gif\" alt=\"Senang\" style=\"width:110px;height:110px;margin-bottom:10px;animation: unlock-pop 0.7s;\">
+                <div style=\"font-size:2rem;font-weight:600;margin-bottom:8px;\">Unlocked!</div>
+              </div>
+            `;
+            overlay.style.background = 'rgba(30,30,50,0.0)';
+            overlay.style.backdropFilter = 'none';
+            overlay.style.pointerEvents = 'none';
+            overlay.style.transition = 'opacity 0.5s';
+            overlay.style.opacity = 1;
+            setTimeout(() => {
+              overlay.style.opacity = 0;
+              setTimeout(() => overlay.remove(), 500);
+            }, 800);
+          } else {
+            overlay.remove();
+          }
+        }
+      }
+
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .locked-content.locked-section {
+          pointer-events: none;
+          filter: blur(2px) grayscale(0.5) brightness(0.7);
+          user-select: none;
+        }
+        .lock-overlay-section {
+          transition: opacity 0.3s;
+          text-align: center;
+        }
+        .lock-message-global {
+          color: #fff;
+          text-shadow: 0 2px 8px #0008;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: rgba(30,30,50,0.0);
+          border-radius: 18px;
+          padding: 32px 32px 24px 32px;
+          box-shadow: 0 4px 32px #0002;
+          filter: none !important;
+        }
+        @keyframes unlock-pop {
+          0% { transform: scale(0.7) rotate(-10deg); opacity: 0; }
+          60% { transform: scale(1.2) rotate(8deg); opacity: 1; }
+          100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        .anime-lock, .anime-unlock {
+          display: block;
+          margin: 0 auto 10px auto;
+          border-radius: 50%;
+          box-shadow: 0 2px 12px #0003;
+          background: none;
+          object-fit: cover;
+          aspect-ratio: 1/1;
+          width: 90px;
+          height: 90px;
+          max-width: 100px;
+          max-height: 100px;
+        }
+        .anime-unlock {
+          width: 110px;
+          height: 110px;
+          max-width: 120px;
+          max-height: 120px;
+        }
+      `;
+      document.head.appendChild(style);
+
+      // On load, lock all except home
+      window.addEventListener('DOMContentLoaded', lockSections);
+
+      // === Overlay only when locked section is in viewport ===
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+      };
+
+      const sectionElements = sectionOrder.map(id => document.getElementById(id));
+
+      function handleSectionInView(entries) {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const idx = sectionOrder.indexOf(entry.target.id);
+            const content = entry.target.querySelector('.locked-content');
+            if (idx > 0 && content && content.classList.contains('locked-section')) {
+              addSectionLockOverlay(entry.target);
+            } else {
+              removeSectionLockOverlay(entry.target);
+            }
+          } else {
+            // Remove overlay if section is not in view
+            removeSectionLockOverlay(entry.target);
+          }
+        }
+      }
+
+      const observer = new IntersectionObserver(handleSectionInView, observerOptions);
+      sectionElements.forEach(section => {
+        if (section) observer.observe(section);
+      });
     </script>
   </body>
 </html>

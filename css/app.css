@@ -837,7 +837,8 @@ html, body {
 #software {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px 60px 20px;
+  padding: 20px 40px;
+  
 }
 #software h3 {
   color: #00bcd4;
@@ -1055,7 +1056,7 @@ html, body {
   background: transparent;
   border-radius: 18px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
-  padding: 40px 36px 32px 36px;
+  padding: 20px 60px;
   font-family: 'Poppins', 'Quicksand', Arial, sans-serif;
   position: relative;
 }
