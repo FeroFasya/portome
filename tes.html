@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <section id="s-kontak">
+        <section id="herokontak">
+          <div class="intro">
+            <h1>Kasih <span>Saran</span></h1>
+            <p>Suka ya? atau engga suka? apapun itu sebelum kamu ingin kontak aku, aku ingin kamu berikan saran, kritik, pujian. Saranmu sangat berarti!</p>
+            <a href="#contact" class="btn">Kirim Saran</a>
+          </div>
+        </section>
+        <div class="divider"></div>
+        <section id="contact">
+          
+          <form id="contactForm">
+           
+          </form>
+          <div id="suggestions"></div>
+          <div id="whatsappPopup" class="popup" style="display: none;">
+            <div class="popup-content">
+              <span class="close" id="closePopup">&times;</span>
+              <!-- <a id="whatsappLink" href="https://wa.me/628815750989?text=Saran%20apa%20untukku%F0%9F%A5%B0" target="_blank"> -->
+                <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px; margin-right: 10px;"> -->
+                <!-- <span>Kasih saran di WA aja wkwk, aku gapunya database, Klik!</span> -->
+              <!-- </a> -->
+            </div>
+          </div>
+        </section>
+      </section> 
+    <script>
+        // === Section Lock/Unlock Logic ===
+      const sectionOrder = [ "s-kontak"];
+      let currentSectionIndex = 0;
+
+      function lockSections() {
+        sectionOrder.forEach((id, idx) => {
+          const section = document.getElementById(id);
+          if (section) {
+            // Pastikan section utama relative agar overlay absolute selalu benar
+            section.style.position = 'relative';
+            // Pastikan min-height agar observer selalu bisa trigger
+            section.style.minHeight = '60vh';
+            // Cari/masukkan wrapper locked-content
+            let content = section.querySelector('.locked-content');
+            if (!content) {
+              content = document.createElement('div');
+              content.className = 'locked-content';
+              while (section.firstChild) {
+                content.appendChild(section.firstChild);
+              }
+              section.appendChild(content);
+            }
+            removeSectionLockOverlay(section);
+            if (idx === 0) {
+              content.classList.remove("locked-section");
+            } else {
+              content.classList.add("locked-section");
+            }
+          }
+        });
+      }
+
+      function unlockNextSection() {
+        if (currentSectionIndex < sectionOrder.length - 1) {
+          currentSectionIndex++;
+          const section = document.getElementById(sectionOrder[currentSectionIndex]);
+          if (section) {
+            const content = section.querySelector('.locked-content');
+            if (content) content.classList.remove("locked-section");
+            removeSectionLockOverlay(section, true); // true = animasi unlock
+          }
+        }
+      }
+
+      function addSectionLockOverlay(section) {
+        if (!section || section.querySelector('.lock-overlay-section')) return;
+        const overlay = document.createElement('div');
+        overlay.className = 'lock-overlay-section';
+        overlay.innerHTML = `
+          <div class="lock-message-global">
+            <img class="anime-lock" src="img/kurumi.gif" alt="Ngambek" style="width:90px;height:90px;margin-bottom:10px;filter:drop-shadow(0 2px 8px #0002);">
+            <img src="https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/icons/lock.svg" alt="Locked" style="width:60px;height:60px;opacity:0.85;margin-bottom:18px;filter:drop-shadow(0 2px 8px #0002);">
+            <div style="font-size:2rem;font-weight:600;margin-bottom:8px;">Halaman ini terkunci.</div>
+            <div style="font-size:1rem;opacity:0.8;">Klik gambar Menhera-chan untuk membuka.</div>
+          </div>
+        `;
+        overlay.style.position = 'absolute';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.background = 'rgba(0, 188, 212, 0.13)';
+        overlay.style.display = 'flex';
+        overlay.style.flexDirection = 'column';
+        overlay.style.justifyContent = 'center';
+        overlay.style.alignItems = 'center';
+        overlay.style.zIndex = 99;
+        overlay.style.backdropFilter = 'blur(2px)';
+        overlay.style.pointerEvents = 'auto';
+        overlay.style.transition = 'opacity 0.3s';
+        overlay.style.borderRadius = '18px';
+        section.appendChild(overlay);
+      }
+
+      function removeSectionLockOverlay(section, unlockAnim) {
+        if (!section) return;
+        const overlay = section.querySelector('.lock-overlay-section');
+        if (overlay) {
+          if (unlockAnim) {
+            // Ganti isi overlay dengan animasi unlock (senang/sparkle)
+            overlay.innerHTML = `
+              <div class=\"lock-message-global\">
+                <img class=\"anime-unlock\" src=\"img/kurumi8.gif\" alt=\"Senang\" style=\"width:110px;height:110px;margin-bottom:10px;animation: unlock-pop 0.7s;\">
+                <div style=\"color:#fff;font-size:2rem;font-weight:600;margin-bottom:8px;\">Unlocked!</div>
+              </div>
+            `;
+            overlay.style.background = 'rgba(20, 20, 20, 0.8)';
+            overlay.style.backdropFilter = 'none';
+            overlay.style.pointerEvents = 'none';
+            overlay.style.transition = 'opacity 0.5s';
+            overlay.style.opacity = 1;
+            setTimeout(() => {
+              overlay.style.opacity = 0;
+              setTimeout(() => overlay.remove(), 500);
+            }, 800);
+          } else {
+            overlay.remove();
+          }
+        }
+      }
+
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .locked-content.locked-section {
+          pointer-events: none;
+          filter: blur(2px) grayscale(0.5) brightness(0.7);
+          user-select: none;
+        }
+        .lock-overlay-section {
+          transition: opacity 0.3s;
+          text-align: center;
+        }
+        .lock-message-global {
+          color: #fff;
+          text-shadow: 0 2px 8px #0008;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: rgba(30,30,50,0.0);
+          border-radius: 18px;
+          padding: 32px 32px 24px 32px;
+          box-shadow: 0 4px 32px #0002;
+          filter: none !important;
+        }
+        @keyframes unlock-pop {
+          0% { transform: scale(0.7) rotate(-10deg); opacity: 0; }
+          60% { transform: scale(1.2) rotate(8deg); opacity: 1; }
+          100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        .anime-lock, .anime-unlock {
+          display: block;
+          margin: 0 auto 10px auto;
+          border-radius: 50%;
+          box-shadow: 0 2px 12px #0003;
+          background: none;
+          object-fit: cover;
+          aspect-ratio: 1/1;
+          width: 90px;
+          height: 90px;
+          max-width: 100px;
+          max-height: 100px;
+        }
+        .anime-unlock {
+          width: 110px;
+          height: 110px;
+          max-width: 120px;
+          max-height: 120px;
+        }
+      `;
+      document.head.appendChild(style);
+
+      // On load, lock all except home
+      window.addEventListener('DOMContentLoaded', lockSections);
+
+      // === Overlay only when locked section is in viewport ===
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+      };
+
+      const sectionElements = sectionOrder.map(id => document.getElementById(id));
+
+      function handleSectionInView(entries) {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const idx = sectionOrder.indexOf(entry.target.id);
+            const content = entry.target.querySelector('.locked-content');
+            if (idx > 0 && content && content.classList.contains('locked-section')) {
+              addSectionLockOverlay(entry.target);
+            } else {
+              removeSectionLockOverlay(entry.target);
+            }
+          } else {
+            // Remove overlay if section is not in view
+            removeSectionLockOverlay(entry.target);
+          }
+        }
+      }
+
+      const observer = new IntersectionObserver(handleSectionInView, observerOptions);
+      sectionElements.forEach(section => {
+        if (section) observer.observe(section);
+    </script>
+</body>
+</html>

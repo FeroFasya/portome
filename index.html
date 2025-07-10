@@ -33,11 +33,11 @@
       <h3>*Note: Klik Kurumi-Chan untuk membuka bagian selanjutnya</h3>
       <nav class="nav-list">
         <ul>
-          <li><a href="#home" class="active" onclick="showLoading(event)">Home</a></li>
-          <li><a href="#about" onclick="showLoading(event)">About</a></li>
-          <li><a href="#project" onclick="showLoading(event)">Projects</a></li>
-          <li><a href="#sertifikat" onclick="showLoading(event)">Sertifikat</a></li>
-          <li><a href="#kontak" onclick="showLoading(event)">Saran</a></li>
+          <li><a href="#home" class="active" onclick="showLoading(event)">// Home</a></li>
+          <li><a href="#s-about" onclick="showLoading(event)">// About</a></li>
+          <li><a href="#s-projects" onclick="showLoading(event)">// Projects</a></li>
+          <li><a href="#s-sertifikat" onclick="showLoading(event)">// Sertifikat</a></li>
+          <li><a href="#s-kontak" onclick="showLoading(event)">// Saran</a></li>
         </ul>
       </nav>
     </header>
@@ -366,22 +366,52 @@
           </div>
         </section>
         <div class="divider"></div>
-        <section id="contact">
-          <h2>Saran untuk Portofolio</h2>
+        <section id="contact" class="chatbot-section" >
+          
           <form id="contactForm">
-            <input type="text" name="name" placeholder="Nama" required>
-            <textarea name="message" rows="5" placeholder="Saran" required></textarea>
-            <input type="submit" value="Kirim">
+           
           </form>
           <div id="suggestions"></div>
           <div id="whatsappPopup" class="popup" style="display: none;">
             <div class="popup-content">
               <span class="close" id="closePopup">&times;</span>
-              <a id="whatsappLink" href="https://wa.me/628815750989?text=Saran%20apa%20untukku%F0%9F%A5%B0" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px; margin-right: 10px;">
-                <span>Kasih saran di WA aja wkwk, aku gapunya database, Klik!</span>
-              </a>
+              <a id="whatsappLink" href="#" target="_blank" style="display:none"></a>
+              <!-- <a id="whatsappLink" href="https://wa.me/628815750989?text=Saran%20apa%20untukku%F0%9F%A5%B0" target="_blank"> -->
+                <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px; margin-right: 10px;"> -->
+                <!-- <span>Kasih saran di WA aja wkwk, aku gapunya database, Klik!</span> -->
+              <!-- </a> -->
             </div>
+          </div>
+          <div id="whatsappConfirmPopup" class="popup" style="display: none;">
+            <div class="popup-content" style="max-width:420px;text-align:center;">
+              <span class="close" id="closeConfirmPopup">&times;</span>
+              <h3 style="margin-bottom:10px;">Konfirmasi Pengiriman Pesan</h3>
+              <div id="confirmMessagePreview" style="background:#e0f7fa;border-radius:12px;padding:12px 10px;margin-bottom:10px;word-break:break-word;"></div>
+              <div class="info">Pesanmu akan dikirim ke WhatsApp <b>Fasya</b> di <span style="color:#00bcd4;">+62 881-5750-989</span></div>
+              <div class="hint"><i class="fas fa-info-circle"></i>Chat ini akan langsung dikirim ke WhatsApp tujuan menggunakan API WhatsApp (GET). Aman, tidak ada data yang disimpan di server manapun.</div>
+              <button id="confirmSendBtn">Kirim Sekarang</button>
+            </div>
+          </div>
+
+          <div class="chatbot-header">
+            <img src="img/aku.jpg" alt="Bot" class="chatbot-avatar">
+            <div>
+              <div class="chatbot-title">Fasya Bot</div>
+              <div class="chatbot-subtitle">Online</div>
+            </div>
+            <button class="chatbot-close" title="Close"></button>
+          </div>
+          <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-message bot">
+              <div class="chatbot-bubble">
+               
+              </div>
+            </div>
+          </div>
+          <!-- Chat log akan muncul di sini -->
+          <div class="chatbot-footer">
+            <input type="text" id="chatbotInput" placeholder="Tulis pesan..." autocomplete="off" />
+            <button class="chatbot-send" title="Kirim">&#9658;</button>
           </div>
         </section>
       </section> 
@@ -415,7 +445,7 @@
           <a href="#"><i class="fas fa-globe"></i></a>
         </div>
         <small style="display: block; text-align: center; margin-top: 15px; color: #888; font-style: italic;">
-          Kalau keren, Order dong :3 <br> bisa isi form kontak aja tuh, otomatis ke WhatsApp ^^
+          Kalau keren, Order dong :3 <br> bisa ketik apa aja di kotak chat tuh, otomatis ke WhatsApp ^^
         </small>
         <div class="footer-bottom">
           <div class="footer-lang">
@@ -431,43 +461,64 @@
       </div>
     </footer>
     <script>
-      // Dragging container
-      const container = document.getElementById('container');
-      let offsetX = 0, offsetY = 0, isDragging = false;
-      // Untuk mouse
-      container.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        offsetX = e.clientX - container.getBoundingClientRect().left;
-        offsetY = e.clientY - container.getBoundingClientRect().top;
-        container.style.cursor = 'grabbing';
+      // Smooth scroll untuk semua link nav
+    document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            // Tutup drawer jika di mobile
+            document.querySelector('.nav-list').classList.remove('active');
+            document.querySelector('.nav-overlay').classList.remove('active');
+            // Scroll smooth
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
       });
-      document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        container.style.left = `${e.clientX - offsetX}px`;
-        container.style.top = `${e.clientY - offsetY}px`;
-      });
-      document.addEventListener('mouseup', () => {
-        isDragging = false;
-        container.style.cursor = 'grab';
-      });
-      // Untuk touchscreen
-      container.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        const touch = e.touches[0];
-        offsetX = touch.clientX - container.getBoundingClientRect().left;
-        offsetY = touch.clientY - container.getBoundingClientRect().top;
-        container.style.cursor = 'grabbing';
-      });
-      document.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        const touch = e.touches[0];
-        container.style.left = `${touch.clientX - offsetX}px`;
-        container.style.top = `${touch.clientY - offsetY}px`;
-      });
-      document.addEventListener('touchend', () => {
-        isDragging = false;
-        container.style.cursor = 'grab';
-      });
+    });
+      // Dragging container (fix mobile bug)
+    const container = document.getElementById('container');
+    let offsetX = 0, offsetY = 0, isDragging = false, startX = 0, startY = 0;
+
+    // Mouse events
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX - container.offsetLeft;
+      startY = e.clientY - container.offsetTop;
+      container.style.cursor = 'grabbing';
+    });
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      container.style.left = `${e.clientX - startX}px`;
+      container.style.top = `${e.clientY - startY}px`;
+    });
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      container.style.cursor = 'grab';
+    });
+
+    // Touch events (mobile fix)
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      const touch = e.touches[0];
+      // Gunakan offsetLeft dan offsetTop agar tidak loncat
+      startX = touch.clientX - container.offsetLeft;
+      startY = touch.clientY - container.offsetTop;
+      container.style.cursor = 'grabbing';
+    }, { passive: false });
+    document.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const touch = e.touches[0];
+      container.style.left = `${touch.clientX - startX}px`;
+      container.style.top = `${touch.clientY - startY}px`;
+      e.preventDefault(); // mencegah scroll saat drag
+    }, { passive: false });
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+      container.style.cursor = 'grab';
+    });
       // ini text yang akan ditampilkan
       const text = "Hi, I’m Fero. I don’t say much, but I build things that do the talking for me. Whether it’s a line of code, a piece of content, or just a quiet idea—I pour a little bit of myself into it. Welcome to my world.";
       let i = 0;
@@ -676,7 +727,7 @@
         overlay.style.left = 0;
         overlay.style.width = '100%';
         overlay.style.height = '100%';
-        overlay.style.background = 'rgba(30,30,50,0.85)';
+        overlay.style.background = 'rgba(0, 188, 212, 0.13)';
         overlay.style.display = 'flex';
         overlay.style.flexDirection = 'column';
         overlay.style.justifyContent = 'center';
@@ -685,6 +736,7 @@
         overlay.style.backdropFilter = 'blur(2px)';
         overlay.style.pointerEvents = 'auto';
         overlay.style.transition = 'opacity 0.3s';
+        overlay.style.borderRadius = '18px';
         section.appendChild(overlay);
       }
 
@@ -697,10 +749,10 @@
             overlay.innerHTML = `
               <div class=\"lock-message-global\">
                 <img class=\"anime-unlock\" src=\"img/kurumi8.gif\" alt=\"Senang\" style=\"width:110px;height:110px;margin-bottom:10px;animation: unlock-pop 0.7s;\">
-                <div style=\"font-size:2rem;font-weight:600;margin-bottom:8px;\">Unlocked!</div>
+                <div style=\"color:#fff;font-size:2rem;font-weight:600;margin-bottom:8px;\">Unlocked!</div>
               </div>
             `;
-            overlay.style.background = 'rgba(30,30,50,0.0)';
+            overlay.style.background = 'rgba(20, 20, 20, 0.8)';
             overlay.style.backdropFilter = 'none';
             overlay.style.pointerEvents = 'none';
             overlay.style.transition = 'opacity 0.5s';
@@ -798,6 +850,119 @@
       const observer = new IntersectionObserver(handleSectionInView, observerOptions);
       sectionElements.forEach(section => {
         if (section) observer.observe(section);
+      });
+
+      // ======= Chatbot Rule-based =======
+      const chatbotBody = document.getElementById('chatbotBody');
+      const chatbotInput = document.getElementById('chatbotInput');
+      const chatbotSend = document.querySelector('.chatbot-send');
+
+      // Bubble options (bisa diubah sesuai kebutuhan)
+      const quickReplies = [
+        { text: "Looking for your old portfolio", value: "old portfolio" },
+        { text: "Just saying hello!", value: "hello" },
+        { text: "Interested in mentorship", value: "mentorship" },
+        { text: "We'd like to hire you", value: "hire" }
+      ];
+
+      // Rule-based responses
+      function getBotReply(message) {
+        const msg = message.toLowerCase();
+        if (msg.includes("portfolio")) {
+          return "Kamu bisa cek portofolio lamaku di halaman utama atau tanya aku lebih lanjut!";
+        }
+        if (msg.includes("hello") || msg.includes("hii") || msg.includes("hai") || msg.includes("halo")) {
+          return "Hello! 👋\nThanks for saying hi 😊";
+        }
+        if (msg.includes("mentorship")) {
+          return "Aku terbuka untuk mentorship! Silakan kontak aku lewat form atau WhatsApp ya.";
+        }
+        if (msg.includes("hire")) {
+          return "Wah, terima kasih! Silakan hubungi aku lewat WhatsApp Yaa.";
+        }
+        if (msg.includes("saran") || msg.includes("kritik")) {
+          return "Terima kasih atas sarannya! Aku sangat menghargai setiap masukan dari kamu 🙏";
+        }
+        return "Maaf, aku belum mengerti. Coba pilih salah satu bubble di bawah atau ketik pertanyaan lain ya!";
+      }
+
+      // Render chat bubble
+      function addChatBubble(text, sender = "bot") {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `chatbot-message ${sender}`;
+        const bubble = document.createElement('div');
+        bubble.className = 'chatbot-bubble';
+        bubble.innerText = text;
+        msgDiv.appendChild(bubble);
+        chatbotBody.appendChild(msgDiv);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+      }
+
+      // Render quick reply bubbles
+      function renderQuickReplies() {
+        const quickDiv = document.createElement('div');
+        quickDiv.className = 'chatbot-quickreplies';
+        quickReplies.forEach(q => {
+          const btn = document.createElement('button');
+          btn.className = 'chatbot-quick-btn';
+          btn.innerText = q.text;
+          btn.onclick = () => {
+            addChatBubble(q.text, "user");
+            setTimeout(() => {
+              addChatBubble(getBotReply(q.value), "bot");
+              renderQuickReplies();
+            }, 400);
+            quickDiv.remove();
+          };
+          quickDiv.appendChild(btn);
+        });
+        chatbotBody.appendChild(quickDiv);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight;
+      }
+
+      // Handle send
+      function handleSend() {
+        const val = chatbotInput.value.trim();
+        if (!val) return;
+        addChatBubble(val, "user");
+        chatbotInput.value = "";
+        // === Tampilkan popup konfirmasi sebelum redirect WhatsApp ===
+        const confirmPopup = document.getElementById('whatsappConfirmPopup');
+        const confirmMsg = document.getElementById('confirmMessagePreview');
+        confirmMsg.textContent = val;
+        confirmPopup.style.display = 'flex';
+        // Tombol konfirmasi
+        const confirmBtn = document.getElementById('confirmSendBtn');
+        confirmBtn.onclick = function() {
+          confirmPopup.style.display = 'none';
+          const whatsappLink = document.getElementById('whatsappLink');
+          const waMsg = encodeURIComponent(val);
+          whatsappLink.href = `https://wa.me/628815750989?text=${waMsg}`;
+          whatsappLink.click();
+          setTimeout(() => {
+            addChatBubble(getBotReply(val), "bot");
+            renderQuickReplies();
+          }, 400);
+        };
+        // Tombol close
+        document.getElementById('closeConfirmPopup').onclick = function() {
+          confirmPopup.style.display = 'none';
+        };
+      }
+
+      // Enter key
+      chatbotInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          handleSend();
+        }
+      });
+      chatbotSend.addEventListener('click', handleSend);
+
+      // Initial bot message & quick replies
+      window.addEventListener('DOMContentLoaded', () => {
+        chatbotBody.innerHTML = '';
+        addChatBubble("Hi! kasih aku saran ya!\nChat apa aja langsung otomatis ke Wa!", "bot");
+        renderQuickReplies();
       });
     </script>
   </body>

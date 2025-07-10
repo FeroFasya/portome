@@ -833,31 +833,33 @@ html, body {
   margin-bottom: 10px;
 }
 
-/* === SOFTWARE SECTION === */
+/* === SOFTWARE SECTION (centered) === */
 #software {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 40px;
-  
+  text-align: center;
 }
 #software h3 {
   color: #00bcd4;
   font-size: 1.3rem;
   margin-bottom: 18px;
-  text-align: left;
+  text-align: center;
 }
-#software .software-list, #software .software2-list {
+#software .software-list,
+#software .software2-list {
   display: flex;
   flex-wrap: wrap;
   gap: 32px 36px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-bottom: 30px;
   background: none;
   box-shadow: none;
   padding: 0;
 }
-#software .software-list div, #software .software2-list div {
+#software .software-list div,
+#software .software2-list div {
   background: none;
   border-radius: 0;
   box-shadow: none;
@@ -868,7 +870,8 @@ html, body {
   transition: none;
   min-width: 80px;
 }
-#software .software-list img, #software .software2-list img {
+#software .software-list img,
+#software .software2-list img {
   width: 54px;
   height: 54px;
   object-fit: contain;
@@ -877,33 +880,38 @@ html, body {
   background: none;
   box-shadow: none;
 }
-#software .software-list p, #software .software2-list p {
+#software .software-list p,
+#software .software2-list p {
   color: #fff;
   font-size: 0.98rem;
   margin: 0;
   text-align: center;
 }
-#software .software-list a, #software .software2-list a {
+#software .software-list a,
+#software .software2-list a {
   text-decoration: none;
   color: inherit;
 }
 @media (max-width: 700px) {
-  #software .software-list, #software .software2-list {
+  #software .software-list,
+  #software .software2-list {
     gap: 18px 12px;
-    justify-content: flex-start;
+    justify-content: center;
   }
-  #software .software-list div, #software .software2-list div {
+  #software .software-list div,
+  #software .software2-list div {
     min-width: 60px;
   }
-  #software .software-list img, #software .software2-list img {
+  #software .software-list img,
+  #software .software2-list img {
     width: 38px;
     height: 38px;
   }
-  #software .software-list p, #software .software2-list p {
+  #software .software-list p,
+  #software .software2-list p {
     font-size: 0.85rem;
   }
 }
-
 
 /* === sertifikat === */
 .certificates-section {
@@ -1050,6 +1058,221 @@ html, body {
 
 
 /* --- CONTACT SECTION MODERN STYLE --- */
+/* Chatbot Section */
+.chatbot-section {
+  max-width: 370px;
+  min-height: 480px;
+  max-height: 540px;
+  height: 100vh;
+  margin: 40px auto 0 auto;
+  background: #f7fafc;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Quicksand', 'Poppins', Arial, sans-serif;
+  overflow: hidden;
+  border: 1.5px solid #141212;
+  min-height: 480px;
+  position: relative;
+}
+
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #1a5555 60%, #4a7f85 100%);
+  color: #fff;
+  padding: 16px 18px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  position: relative;
+}
+
+.chatbot-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-right: 14px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  background: #e0f7fa;
+}
+
+.chatbot-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.chatbot-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.chatbot-close {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.7rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.chatbot-close:hover {
+  opacity: 1;
+}
+
+.chatbot-body {
+  flex: 1;
+  padding: 18px 14px 12px 14px;
+  background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 60%, #b2ebf2 100%);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chatbot-message {
+  display: flex;
+  align-items: flex-end;
+}
+
+.chatbot-message.bot {
+  justify-content: flex-start;
+}
+
+.chatbot-message.user {
+  justify-content: flex-end;
+}
+
+.chatbot-bubble {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px 0 #00bcd410;
+  background: #e0f7fa;
+  color: #222;
+  margin-bottom: 2px;
+  word-break: break-word;
+}
+
+.chatbot-message.user .chatbot-bubble {
+  background: #00bcd4;
+  color: #fff;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  margin-left: auto;
+}
+
+.chatbot-message.bot .chatbot-bubble {
+  background: #e0f7fa;
+  color: #222;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  margin-right: auto;
+}
+
+.chatbot-footer {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-top: 1px solid #e0e0e0;
+  gap: 8px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 16px 0 rgba(0,188,212,0.07);
+}
+
+#chatbotInput {
+  flex: 1;
+  border: 1.5px solid #00bcd4;
+  border-radius: 22px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255,255,255,0.85);
+  color: #222;
+  transition: border 0.2s, background 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+#chatbotInput:focus {
+  border: 1.5px solid #0097a7;
+  background: rgba(255,255,255,0.95);
+}
+
+.chatbot-send {
+  background: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.chatbot-send:hover {
+  background: #0097a7;
+}
+
+.chatbot-quickreplies {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0 0 0;
+}
+
+.chatbot-quick-btn {
+  background: linear-gradient(90deg, #e0f7fa 60%, #f8bbd0 100%);
+  color: #007a8a;
+  border: 1.5px solid #00bcd4;
+  border-radius: 22px;
+  text-align: left;
+  padding: 12px 18px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px 0 #00bcd410;
+  opacity: 0.92;
+  outline: none;
+}
+.chatbot-quick-btn:hover {
+  background: linear-gradient(90deg, #00bcd4 60%, #b2ebf2 100%);
+  color: #fff;
+  border: 1.5px solid #0097a7;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .chatbot-section {
+    max-width: 98vw;
+    min-width: 0;
+    border-radius: 12px;
+  }
+  .chatbot-header, chatbotInput .chatbot-footer {
+   border-top-left-radius: 18px;
+   border-top-right-radius: 18px;
+
+  }
+}
 #contact {
   max-width: 520px; /* diperlebar dari 100% */
   margin: 40px auto 0 auto;
@@ -1441,5 +1664,109 @@ html, body {
     margin: 0 auto;
     display: block;
   }
+}
+
+/* WhatsApp Confirm Popup as floating notification */
+#whatsappConfirmPopup.popup {
+  position: fixed;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  z-index: 9999;
+  background: rgba(30,40,60,0.18);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInNotif 0.3s;
+}
+#whatsappConfirmPopup .popup-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0,188,212,0.18), 0 2px 8px #00bcd410;
+  padding: 28px 32px 22px 32px;
+  max-width: 420px;
+  min-width: 320px;
+  width: 98vw;
+  text-align: center;
+  position: relative;
+  animation: notifPop 0.4s cubic-bezier(.6,-0.28,.74,.05);
+}
+#whatsappConfirmPopup .close {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 1.5rem;
+  color: #00bcd4;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+#whatsappConfirmPopup .close:hover {
+  opacity: 1;
+}
+#confirmMessagePreview {
+  background: linear-gradient(90deg, #e0f7fa 60%, #fff 100%);
+  border-radius: 12px;
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  word-break: break-word;
+  color: #222;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px #00bcd410;
+}
+#whatsappConfirmPopup .popup-content h3 {
+  margin-bottom: 10px;
+  color: #00bcd4;
+  font-weight: 700;
+  font-size: 1.18rem;
+}
+#whatsappConfirmPopup .popup-content .info {
+  font-size: 1.01rem;
+  margin-bottom: 12px;
+  color: #00bcd4;
+  font-weight: 600;
+}
+#whatsappConfirmPopup .popup-content .hint {
+  font-size: 0.97rem;
+  color: #666;
+  background: rgba(0,188,212,0.08);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: center;
+  text-align: left;
+}
+#whatsappConfirmPopup .popup-content .hint i {
+  color: #00bcd4;
+  font-size: 1.1rem;
+}
+#confirmSendBtn {
+  background: linear-gradient(90deg, #00bcd4 60%, #b2ebf2 100%);
+  color: #fff;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 18px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #00bcd410;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+#confirmSendBtn:hover {
+  background: linear-gradient(90deg, #0097a7 60%, #00bcd4 100%);
+  color: #fff;
+}
+@keyframes fadeInNotif {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes notifPop {
+  0% { transform: scale(0.85) translateY(30px); opacity: 0; }
+  80% { transform: scale(1.05) translateY(-6px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
