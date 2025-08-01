@@ -6,10 +6,17 @@
     <title>Fero</title>
     <!-- My Own CSS -->
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/app2.css" />
-    <link rel="icon" type="image/png" href="img/" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    >
   </head>
   <body>
     <!-- Isi konten halaman web -->
@@ -26,11 +33,11 @@
       <h3>*Note: Klik Kurumi-Chan untuk membuka bagian selanjutnya</h3>
       <nav class="nav-list">
         <ul>
-          <li><a href="#home" class="active" onclick="showLoading(event)">// Home</a></li>
-          <li><a href="#s-about" onclick="showLoading(event)" >// About</a></li>
-          <li><a href="#s-projects" onclick="showLoading(event)" >// Projects</a></li>
-          <li><a href="#s-sertifikat" onclick="showLoading(event)" >// Sertifikat</a></li>
-          <li><a href="#s-kontak" onclick="showLoading(event)" >// Saran</a></li>
+          <li><a href="#home" class="active" onclick="showLoading(event)" style="color: #888; font-style: italic;">// Home</a></li>
+          <li><a href="#s-about" onclick="showLoading(event)" style="color: #888; font-style: italic;">// About</a></li>
+          <li><a href="#s-projects" onclick="showLoading(event)" style="color: #888; font-style: italic;" >// Projects</a></li>
+          <li><a href="#s-sertifikat" onclick="showLoading(event)" style="color: #888; font-style: italic;">// Sertifikat</a></li>
+          <li><a href="#s-kontak" onclick="showLoading(event)" style="color: #888; font-style: italic;">// Saran</a></li>
         </ul>
       </nav>
     </header>
@@ -45,22 +52,14 @@
         <div class="content">
           <div class="content-description">
             <h1 class="title">From pixels to personality — my work is my story.</h1>
-            <p id="typed-text" style="min-height: 10px; white-space: pre-wrap; font-size: 16px; color: #111; margin: 20px auto; max-width: 1000px; text-align: left;"></p>
-            <div class="box-button">
-                <div class="button"><span>Lebih lanjut</span></div>
-            </div>
+            <p id="typed-text" style="min-height: 10px; white-space: pre-wrap; font-size: 16px; color: #444; margin: 20px auto; max-width: 1000px; text-align: left;"></p>
+            <button>Lebih lanjut</button>
             <small style="display: block; margin-top: 15px; color: #888; font-style: italic;">
               “Even the quietest voices have stories worth hearing.”
             </small>
           </div>
           <div class="content-image">
-            <div class="content-image-stack">
-              <div class="content-image-card">
-                <div class="content-image-img">
-                  <img src="img/aku.jpg" alt="Foto Fasya" />
-                </div>
-              </div>
-            </div>
+            <img src="img/aku.jpg" alt="Foto Fasya" style="border-radius: 50%; margin-left: 30px 0; box-shadow: 0 0 10px #ffc2e2;">
           </div>
         </div>
         <section id="terminal-section">
@@ -77,29 +76,23 @@
 
       <!-- About Section -->
       <section id="s-about">
-        <br><br>
-        <section id="about-paper" class="about-paper">
-          <div class="about-paper-paper">
-            <div class="about-paper-lines">
-              <div class="about-paper-text" contenteditable spellcheck="false">
-                <span class="dynamic-text">
-                  <span class="word">Feroga</span>
-                  <span class="word">Radja</span>
-                  <span class="word">Fasyahira</span>
-                </span>
-                <br><br>
-                Aku adalah mahasiswa semester 5 yang tertarik banget di dunia teknologi, terutama web development dan AI.<br>
-                Selain ngoding, aku juga suka bikin naratif cerita, explore dunia game development, dan ngelamun soal luar angkasa 🌌.<br>
-                Di luar itu, aku aktif bikin konten seru tentang teknologi dan hiburan, karena aku percaya belajar itu harus fun dan menginspirasi!
-                <br><br>
-                <small class="about-paper-quote">
-                  “Ssshhhh~, Kalian bisa nulis di kertas ini loh, coba!”
-                </small>
-              </div>
-            </div>
-            <div class="about-paper-holes about-paper-hole-top"></div>
-            <div class="about-paper-holes about-paper-hole-middle"></div>
-            <div class="about-paper-holes about-paper-hole-bottom"></div>
+        <section id="about" class="section about">
+          <div class="container">
+            <h1 class="title">
+              <span class="dynamic-text">
+                <span class="word">Feroga</span>
+                <span class="word">Radja</span>
+                <span class="word">Fasyahira</span>
+              </span>
+            </h1>
+            <p class="description">
+              Aku adalah mahasiswa semester 4 yang tertarik banget di dunia teknologi, terutama web development dan AI.
+              Selain ngoding, aku juga suka bikin naratif cerita, explore dunia game development, dan ngelamun soal luar angkasa 🌌.
+              Di luar itu, aku aktif bikin konten seru tentang teknologi dan hiburan, karena aku percaya belajar itu harus fun dan menginspirasi!
+            </p>
+            <small style="display: block; margin-top: 15px; color: #888; font-style: italic;">
+              “Aku ingin menjadi seorang Web Engineer, AI Explorer, Content Creator, Data Analyst, bahkan Game Developer.”
+            </small>
           </div>
         </section>
         <!-- Skills Section -->
@@ -117,10 +110,10 @@
             </ul>
           </div>
         </section>
-        <br>
+      
         <!-- Education Section -->
         <section id="education">
-          <div class="education-container">
+          <!-- <div class="education-container">
             <h2>Education</h2>
             <div class="timeline">
               <div class="timeline-item">
@@ -134,88 +127,194 @@
                 <p>Belajar tentang perilaku manusia, komunikasi, dan keterampilan mentoring anak.</p>
               </div>
             </div>
+          </div> -->
+          <!-- From Uiverse.io by SouravBandyopadhyay --> 
+          <div class="notification">
+              <div class="notiglow"></div>
+              <div class="notiborderglow"></div>
+              <div class="notititle">Welcome To Uiverse</div>
+              <div class="notibody">Contribute to Open Source UI Elements</div>
           </div>
+          
         </section>
-        <br>
       </section>
-
+      <div class="divider"></div>
       <!-- Projects Section -->
       <section id="s-projects">
         <section id="projects">
           <h2>My Projects</h2>
-          <p class="card__subtitle">Here are some of my best works and projects showcasing my skills.</p>
+          <p>Here are some of my best works and projects showcasing my skills in web development, Thumbnail editing, and AI integration.</p>
           <div class="card-container">
-           
             <div class="card">
-              <div class="banner">
-                <span class="banner-text">Project</span>
-                <span class="banner-text">Hard Level</span>
-              </div>
-              <span class="card__title">Glamora-Online Store</span>
-              <p class="card__subtitle">Ini adalah project akhir yang ku buat di Sanbercode x Bandung AI</p>
-              <!-- <img src="img/project1.jpg" alt="Project 1"> -->
-              <p style="color: cornflowerblue;"><a href="https://drive.google.com/drive/folders/1hTBW-AZgtyEr2CMxT9ksm2hRFWmfKFHh?usp=sharing">link gdrive</a></p>
+              <img src="img/project1.jpg" alt="Project 1">
+              <h3>Glamora-Online Store</h3>
+              <p>Ini adalah project akhir yang ku buat di Sanbercode x Bandung AI</p>
+              
             </div>
             <div class="card">
-              <div class="banner">
-                <span class="banner-text">Tugas Besar</span>
-                <span class="banner-text">Extreme Level</span>
-              </div>
-              <span class="card__title">Cafe Management System</span>
-              <p class="card__subtitle">Tugas Akhir Mata Kuliah Analisis dan Desain Perangkat Lunak</p>
-              <!-- <img src="img/project2.jpg" alt="Project 2"> -->
-               <p style="color: cornflowerblue;"><a href="https://drive.google.com/drive/folders/1hTBW-AZgtyEr2CMxT9ksm2hRFWmfKFHh?usp=sharing">link gdrive</a></p>
+              <img src="img/project2.jpg" alt="Project 2">
+              <h3>Cafe Management System</h3>
+              <p>Tugas Akhir Mata Kuliah Analisis dan Desain Perangkat Lunak</p>
+              
             </div>
-
             <div class="card">
-              <div class="banner">
-                <span class="banner-text">GameDev</span>
-                <span class="banner-text">Explore Mode</span>
-              </div>
-              <span class="card__title">20 Days of Heavy</span>
-              <p class="card__subtitle">Visual novel psikologis bertema horor dan romansa, berlatar di rumah terisolasi misterius. Eksperimen naratif tentang trauma dan keterikatan.</p>
-              <!-- <img src="img/project2.jpg" alt="Project 2"> -->
-              <p style="color: cornflowerblue;">link gdrive</p>
+              <img src="img/project3.jpg" alt="Project 3">
+              <h3>Web Promotion</h3>
+              <p>aku membuat web ini untuk mempromosikan sebuah game online (MLBB)</p>  
             </div>
-          </div> 
+          </div>
+          
+          <h2>Creative Tech</h2>
+          
         </section>
         
-        <section id="creative">
-          <h2>Creative Tech</h2>
-          <div class="creative-container">
-            <div class="cardcf">
-              <svg xmlns="" viewBox="0 0 24 24"><path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path></svg>
-              <div class="cardcf_content">
-                <p class="cardcf_title">Card Title</p>
-                <p class="cardcf_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <section id="testimonials">
+          <h3>Karya dan Penghargaan</h3>
+          <p style="color: #fff; text-align: center;">Coming soon</p>
+        </section>
+        <hr class="separator">
+        <section id="software">
+          <h3>Software I Use</h3>
+          <div class="software-list">
+            <div class="">
+              <a href="https:///www.youtube.com" target="_blank">
+                <img src="img/yucub.png" alt="Software 1">
+                <p>Yucub</p>
+              </a>
+            </div>
+            <div class="">
+              <a href="https://www.tiktok.com" target="_blank">
+                <img src="img/tiktok.png" alt="Software 2">
+                <p>Tiktok</p>
+              </a>
+            </div>
+            <div class="">
+              <a href="https://www.instagram.com" target="_blank">
+                <img src="img/ig.png" alt="Software 3">
+                <p>Instagram</p>
+              </a>
+            </div>
+          </div>
+          <h3>For Editing</h3>
+          <div class="software2-list">
+            <div class="">
+              <a href="https://code.visualstudio.com" target="_blank">
+                <img src="img/vscode.png" alt="software 4">
+                <p>VS Code</p>
+              </a>
+            </div>
+            <div class="">
+              <a href="https://www.capcut.com" target="_blank">
+                <img src="img/capcut.png" alt="software 5">
+                <p>Capcut</p>
+              </a>
+            </div>
+            <div class="">
+              <a href="https://picsart.com" target="_blank">
+                <img src="img/picsart.png" alt="software 6">
+                <p>Picsart</p>
+              </a>
+            </div>
+          </div>
+        </section>
+      </section>
+      <div class="divider"></div>
+      <!-- Sertifikat Section -->
+      <section id="s-sertifikat">
+        <section class="certificates-section">
+          <h2 class="section-title">Sertifikat</h2>
+          <br>
+          <div class="container-sf">
+            <div data-text="" style="--r:-15;" class="glass">
+              <img src="img/inti1.jpg" alt="Sertifikat Internship" title="📝 SanberCode x Bdg AI - Web Development with AI" style="width: 80%; height: auto; border-radius: 12px;">
+              <!-- <svg viewBox="0 0 496 512" height="1em" xmlns="http://www.w3.org/2000/svg"> -->
+                <path
+                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                ></path>
+              </svg>
+            </div>
+            <div data-text="Event" title="🍳 Kunjungan Industri - Himatif x PT Agate" style="--r:5;" class="glass">
+              <img src="img/event2.jpg" alt="Sertifikat Internship" style="width: 100%; height: auto; border-radius: 0px;">
+              <!-- <svg viewBox="0 0 640 512" height="1em" xmlns="http://www.w3.org/2000/svg"> -->
+                <path
+                  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
+                ></path>
+              </svg>
+            </div>
+            <div data-text="Dicoding Class" title="Dicoding Class - Belajar Dasar AI" style="--r:25;" class="glass">
+              <img src="img/learning1.jpg" alt="Sertifikat Internship" style="width: 100%; height: auto; border-radius: 0px;">
+              <!-- <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg"> -->
+                <path
+                  d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- <button class="show-more-btn" id="showMoreCertificates" onclick="showMoreCertificates()">Tampilkan lebih banyak</button> -->
+        </section>
+      </section>
+      <div class="divider"></div>
+      <!-- Contact Section -->
+      <section id="s-kontak">
+        <section id="herokontak">
+          <div class="intro">
+            <h1>Kasih <span>Saran</span></h1>
+            <p>Suka ya? atau engga suka? apapun itu sebelum kamu ingin kontak aku, aku ingin kamu berikan saran, kritik, pujian. Saranmu sangat berarti!</p>
+            <a href="#contact" class="btn">Kirim Saran</a>
+          </div>
+        </section>
+        <div class="divider"></div>
+        <section id="contact" class="chatbot-section" >
+          
+          <form id="contactForm">
+           
+          </form>
+          <div id="suggestions"></div>
+          <div id="whatsappPopup" class="popup" style="display: none;">
+            <div class="popup-content">
+              <span class="close" id="closePopup">&times;</span>
+              <a id="whatsappLink" href="#" target="_blank" style="display:none"></a>
+              <!-- <a id="whatsappLink" href="https://wa.me/628815750989?text=Saran%20apa%20untukku%F0%9F%A5%B0" target="_blank"> -->
+                <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px; margin-right: 10px;"> -->
+                <!-- <span>Kasih saran di WA aja wkwk, aku gapunya database, Klik!</span> -->
+              <!-- </a> -->
+            </div>
+          </div>
+          <div id="whatsappConfirmPopup" class="popup" style="display: none;">
+            <div class="popup-content" style="max-width:420px;text-align:center;">
+              <span class="close" id="closeConfirmPopup">&times;</span>
+              <h3 style="margin-bottom:10px;">Konfirmasi Pengiriman Pesan</h3>
+              <div id="confirmMessagePreview" style="background:#e0f7fa;border-radius:12px;padding:12px 10px;margin-bottom:10px;word-break:break-word;"></div>
+              <div class="info">Pesanmu akan dikirim ke WhatsApp <b>Fasya</b> di <span style="color:#00bcd4;">+62 881-5750-989</span></div>
+              <div class="hint"><i class="fas fa-info-circle"></i>Chat ini akan langsung dikirim ke WhatsApp tujuan menggunakan API WhatsApp (GET). Aman, tidak ada data yang disimpan di server manapun.</div>
+              <button id="confirmSendBtn">Kirim Sekarang</button>
+            </div>
+          </div>
+
+          <div class="chatbot-header">
+            <img src="img/aku.jpg" alt="Bot" class="chatbot-avatar">
+            <div>
+              <div class="chatbot-title">Fasya Bot</div>
+              <div class="chatbot-subtitle">Online</div>
+            </div>
+            <button class="chatbot-close" title="Close"></button>
+          </div>
+          <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-message bot">
+              <div class="chatbot-bubble">
+               
               </div>
             </div>
-            <div class="cardcf">
-                <svg xmlns="" viewBox="0 0 24 24"><path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path></svg>
-                <div class="cardcf_content">
-                  <p class="cardcf_title">Card Title</p>
-                  <p class="cardcf_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-            </div>
-            <div class="cardcf">
-               <svg xmlns="" viewBox="0 0 24 24"><path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path></svg>
-                <div class="cardcf_content">
-                 <p class="cardcf_title">Card Title</p>
-                 <p class="cardcf_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
           </div>
-         </div>
-
+          <!-- Chat log akan muncul di sini -->
+          <div class="chatbot-footer">
+            <input type="text" id="chatbotInput" placeholder="Tulis pesan..." autocomplete="off" />
+            <button class="chatbot-send" title="Kirim">&#9658;</button>
+          </div>
         </section>
-        <section id="Karya">
-          <h2>Karya dan Penghargaan</h2>
-          <p style="color: #000000; text-align: center;">Coming soon</p>
-        </section>
-       
-      </section>
-
-
-      
+      </section> 
+      <div class="divider"></div>
       <!-- Social Media Section -->
       <aside>
         <div class="social-media">
@@ -236,12 +335,7 @@
           <li><a href="#">Websise</a></li>
           <li><a href="#">Aku</a></li>
           <li><a href="#">Keren</a></li>
-          <li style="text-shadow: 
-            -1px -1px 0 black,
-            1px -1px 0 black,
-            -1px  1px 0 black,
-            1px  1px 0 black;"><a href="#">Kan?</a>
-          </li>
+          <li><a href="#">Kan?</a></li>
         </ul>
         <div class="footer-social">
           <a href="https://wa.me/628815750989" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -266,34 +360,6 @@
       </div>
     </footer>
     <script>
-      // Efek muter 90 derajat setiap klik tombol 'Lebih lanjut'
-      let containerRotation = 0;
-      const boxButton = document.querySelector('.box-button');
-      if (boxButton) {
-        boxButton.addEventListener('click', function() {
-          const container = document.getElementById('container');
-          if (container) {
-            containerRotation += 90;
-            container.classList.add('active');
-            container.style.transition = 'transform 0.2s';
-            container.style.transform = `scale(1.1) rotate(${containerRotation}deg)`;
-            setTimeout(() => {
-              container.classList.remove('active');
-              container.style.transform = `rotate(${containerRotation}deg)`;
-            }, 500);
-          }
-        });
-      }
-      // Tutup nav-list jika klik di luar nav-list/hamburger/navOverlay (mobile)
-      document.addEventListener('click', function(e) {
-        const isNavOpen = navList.classList.contains('active');
-        if (!isNavOpen) return;
-        // Jika klik bukan di nav-list, hamburger, atau overlay
-        if (!navList.contains(e.target) && !hamburger.contains(e.target) && !navOverlay.contains(e.target)) {
-          navList.classList.remove('active');
-          navOverlay.classList.remove('active');
-        }
-      });
       // Smooth scroll untuk semua link nav
     document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -426,10 +492,46 @@
         var modal = document.getElementById(certId);
         modal.style.display = "none"; // Menyembunyikan modal
       }
-    
-      
-      
-      
+      // Menutup modal jika klik di luar gambar
+      window.onclick = function(event) {
+        var modals = document.getElementsByClassName('modal');
+        for (var i = 0; i < modals.length; i++) {
+          if (event.target === modals[i]) {
+            modals[i].style.display = "none";
+          }
+        }
+      }
+      // Sertifikat: Show More Functionality
+      function showMoreCertificates() {
+        var hidden = document.querySelectorAll('.certificate-card.hidden-certificate');
+        hidden.forEach(function(card) {
+          card.classList.remove('hidden-certificate');
+        });
+        var btn = document.getElementById('showMoreCertificates');
+        if (btn) btn.style.display = 'none';
+      }
+      // Form submission
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah form dari pengiriman default
+        const name = event.target.name.value; // Ambil nama dari form
+        const message = event.target.message.value;
+        // Buat elemen baru untuk saran
+        const suggestion = document.createElement('div');
+        suggestion.className = 'suggestion';
+        suggestion.innerHTML = `<img src="" alt="" style="border-radius: 50%; margin-right: 10px;"> <strong>👻Anomali👻</strong>: ${message}`;
+        // Tambahkan saran ke dalam div suggestions
+        document.getElementById('suggestions').appendChild(suggestion);
+        // Tampilkan popup WhatsApp
+        const whatsappLink = document.getElementById('whatsappLink');
+        whatsappLink.href = `https://wa.me/628815750989?text=Haii,%20aku%20${encodeURIComponent(name)},%20${encodeURIComponent(message)}`; 
+        document.getElementById('whatsappPopup').style.display = 'flex';
+        // Reset form
+        event.target.reset();
+      });
+      // Menutup popup saat tombol close diklik
+      document.getElementById('closePopup').addEventListener('click', function() {
+        document.getElementById('whatsappPopup').style.display = 'none'; // Menyembunyikan popup saat tombol close diklik
+      });
       // === Footer Language Switcher ===
       const footerLangSelect = document.getElementById('footerLangSelect');
       if (footerLangSelect) {
@@ -524,7 +626,7 @@
         overlay.style.left = 0;
         overlay.style.width = '100%';
         overlay.style.height = '100%';
-        overlay.style.background = 'rgba(20, 20, 20, 0.8)';
+        overlay.style.background = 'rgba(0, 188, 212, 0.13)';
         overlay.style.display = 'flex';
         overlay.style.flexDirection = 'column';
         overlay.style.justifyContent = 'center';
@@ -533,7 +635,7 @@
         overlay.style.backdropFilter = 'blur(2px)';
         overlay.style.pointerEvents = 'auto';
         overlay.style.transition = 'opacity 0.3s';
-        overlay.style.borderRadius = 'px';
+        overlay.style.borderRadius = '18px';
         section.appendChild(overlay);
       }
 
