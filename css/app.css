@@ -383,7 +383,7 @@ header.navbar-container .nav-list li:hover a {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-
+  will-change: transform, opacity;
   width: 160px;
   height: 160px;
   min-width: 120px;
@@ -656,7 +656,11 @@ main aside .social-media ul {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   margin: auto;
-  background-color: #0f151b;
+
+  background-image: url('../img/aside-kertas.png');
+   background-size: 220%;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -670,7 +674,7 @@ main aside .social-media li {
 main aside .social-media li a {
   text-decoration: none;
   font-size: 1.5rem;
-  color: white;
+  color: rgb(0, 0, 0);
   transition: all 0.1s ease-in-out;
 }
 main aside .social-media li a:hover {
